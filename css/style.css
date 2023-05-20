@@ -396,7 +396,6 @@ h1, h2, h3, h4, h5, h6, figure {
   border-radius: 50%;
 }
 .gtco-staff h3 {
-  color: #fff;
   font: 35px;
   margin-bottom: 5px;
 }
@@ -585,7 +584,7 @@ form label {
 #gtco-started,
 #gtco-footer,
 .gtco-section {
-  padding: 7em 0;
+  padding: 3em 0;
   clear: both;
   background-color: #1a313f;
 }
