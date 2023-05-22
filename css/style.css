@@ -101,7 +101,7 @@ h1, h2, h3, h4, h5, h6, figure {
   padding: 40px 0;
   z-index: 1001;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1047px) {
   .gtco-nav {
     padding: 20px 0;
   }
@@ -117,7 +117,7 @@ h1, h2, h3, h4, h5, h6, figure {
   padding: 5px 10px;
   color: #fff;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1047px) {
   .gtco-nav .menu-1, .gtco-nav .menu-2 {
     display: none;
   }
@@ -325,7 +325,7 @@ h1, h2, h3, h4, h5, h6, figure {
   position: relative;
   z-index: 10;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1047px) {
   .gtco-cover {
     height: 600px;
   }
@@ -336,7 +336,7 @@ h1, h2, h3, h4, h5, h6, figure {
   display: table;
   width: 100%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1047px) {
   .gtco-cover .display-t,
   .gtco-cover .display-tc {
     height: 400px;
@@ -345,7 +345,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .gtco-cover.gtco-cover-sm {
   height: 500px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1047px) {
   .gtco-cover.gtco-cover-sm {
     height: 200px;
   }
@@ -356,7 +356,7 @@ h1, h2, h3, h4, h5, h6, figure {
   display: table;
   width: 100%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1047px) {
   .gtco-cover.gtco-cover-sm .display-t,
   .gtco-cover.gtco-cover-sm .display-tc {
     height: 300px;
@@ -372,7 +372,7 @@ h1, h2, h3, h4, h5, h6, figure {
   display: table;
   width: 100%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1047px) {
   #gtco-counter {
     height: inherit;
     padding: 7em 0;
@@ -505,7 +505,7 @@ form label {
   font-size: 70px;
   line-height: 1.5;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1047px) {
   #gtco-header .display-tc h1,
   #gtco-counter .display-tc h1,
   .gtco-cover .display-tc h1 {
@@ -554,7 +554,7 @@ form label {
   color: rgba(255, 255, 255, 0.5);
   letter-spacing: .1em;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1047px) {
   #gtco-counter .feature-center {
     margin-bottom: 50px;
   }
@@ -596,7 +596,7 @@ form label {
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1047px) {
   #gtco-features,
   #gtco-features-2,
   #gtco-testimonial,
@@ -623,7 +623,7 @@ form label {
   width: 100%;
   margin-bottom: 40px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1047px) {
   .feature-center {
     margin-bottom: 50px;
   }
@@ -684,7 +684,7 @@ form label {
   -ms-border-radius: 50%;
   border-radius: 50%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1047px) {
   .feature-left .icon {
     margin-right: 5%;
   }
@@ -699,7 +699,7 @@ form label {
   float: left;
   width: 80%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1047px) {
   .feature-left .feature-copy {
     width: 70%;
     float: left;
@@ -859,7 +859,7 @@ form label {
   margin-bottom: 30px;
   text-align: center;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1047px) {
   .gtco-tabs .icon-xlg {
     font-size: 300px;
   }
@@ -964,7 +964,7 @@ form label {
   letter-spacing: 2px;
   text-transform: uppercase;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1047px) {
   #gtco-footer .copyright .pull-left,
   #gtco-footer .copyright .pull-right {
     float: none !important;
@@ -1207,7 +1207,7 @@ form label {
   z-index: 2001;
   border-bottom: none !important;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1047px) {
   .gtco-nav-toggle {
     display: block;
   }
