@@ -1573,6 +1573,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 @media (min-width: 1024px) {
   #intro {
     background-attachment: fixed;
+    height: 100vh;
   }
 
   #about {
@@ -1671,5 +1672,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 @media (max-width: 460px) {
   #subscribe button {
     margin-top: 10px;
+  }
+  #intro {
+    height: 38vh;
   }
 }
