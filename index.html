@@ -1,122 +1,718 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="sk">
 <head>
-  <meta charset="utf-8">
-  <title>FESTIVAL RADOSTI 2024 | Domček</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
-
-  <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
-
-  <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Libraries CSS Files -->
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/venobox/venobox.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-  <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-    Theme Name: TheEvent
-    Theme URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
-    Author: BootstrapMade.com
-    License: https://bootstrapmade.com/license/
-  ======================================================= -->
+    <!-- Inline Preloader CSS for faster perceived load -->
+    <style>
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Use a fallback background color in case CSS variables aren't loaded yet, then override with variable */
+            background-color: #FFFFFF; /* Fallback for light theme */
+            background-color: var(--light-theme-bg, #FFFFFF); /* Match page background, with fallback */
+            z-index: 99999; /* Ensure it's on top of everything */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            transition: opacity 0.5s ease-out; /* For smooth fade-out */
+        }
+        #preloader.hidden {
+            opacity: 0;
+            pointer-events: none; /* Allow interaction with page content underneath after fade */
+        }
+        .spinner {
+            border: 8px solid #e0e0e0; /* Light grey for the track */
+            border-top: 8px solid #FF4E50; /* Using a primary accent color */
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival Radosti 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-
-  <!--==========================
-    Header
-  ============================-->
-  <header id="header">
-    <div class="container">
-
-      <div id="logo" class="pull-left">
-        <!-- Uncomment below if you prefer to use a text logo -->
-        <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
-        <a href="#intro" class="scrollto"><img src="img/logo.png" alt="" title=""></a>
-      </div>
-
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-        </ul>
-      </nav><!-- #nav-menu-container -->
+    <!-- Preloader Start -->
+    <div id="preloader">
+        <div class="spinner"></div>
     </div>
-  </header><!-- #header -->
+    <!-- Preloader End -->
 
-  <!--==========================
-    Intro Section
-  ============================-->
-  <section id="intro">
-    <div class="intro-container">
-      
-    </div>
-  </section>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#domov" class="logo-link"> <!-- Added anchor tag -->
+                <div class="logo">Festival radosti</div> <!-- Updated text -->
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#domov">Domov</a></li>
+                <li class="nav-item"><a href="#tema">Téma</a></li>
+                <li class="nav-item"><a href="#hostia">Hostia</a></li>
+                <li class="nav-item"><a href="#program">Program</a></li>
+                <li class="nav-item"><a href="#podporte-nas">Podporte nás</a></li>
+                <li class="nav-item"><a href="#sponsors">Sponzori</a></li>
+                <li class="nav-item nav-item-highlight"><a href="#chcem-prist">Chcem prísť</a></li>
+            </ul>
+            <div class="hamburger" role="button" tabindex="0" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle navigation menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="#domov">Domov</a>
+                <a href="#tema">Téma</a>
+                <a href="#hostia">Hostia</a>
+                <a href="#program">Program</a>
+                <a href="#podporte-nas">Podporte nás</a>
+                <a href="#sponsors">Sponzori</a>
+                <a href="#chcem-prist" class="nav-item-highlight">Chcem prísť</a>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section id="domov" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">14. - 18. August 2025 • Domček</div>
+            <h1 class="festival-title">HORIACE SRDCE</h1>
+            <p class="festival-subtitle">„My milujeme, lebo On prvý miloval nás.“</p>
+            <p class="festival-scripture">(1 Jn 4, 19)</p>
+            <div class="hero-buttons">
+                <a href="#chcem-prist" class="btn btn-primary">
+                    <span aria-hidden="true">🎫</span>
+                    CHCEM PRÍSŤ
+                </a>
+                <a href="#tema" class="btn btn-secondary">
+                    <span aria-hidden="true">ℹ️</span>
+                    O FESTIVALE RADOSTI
+                </a>
+            </div>
+        </div>
+    </section>
 
+    <!-- Téma Section -->
+    <section id="tema" class="section">
+        <div class="tema">
+            <div class="tema-content">
+                <h2 class="section-title">Téma festivalu</h2>
+                <p class="tema-text">
+                    Už Ti niekedy horelo srdce? Poznáš ten pocit? Či už si to zažil alebo ešte nie, kdesi
+                    v hĺbke každého z nás, je táto túžba. No ako na to? Ako sa znova prebudiť, oživiť
+                    a rozpáliť to čo už hasne? Oheň, ktorý môže rozpáliť naše srdce totižto nie je z nás. Je to
+                    oheň, ktorý nikdy nezhára (porov. Ex 3, 2) a horí láskou večnou. Jeho zdrojom je náš Pán
+                    a Boh, ktorému odvekou horí srdce za každého jedného z nás! A v tomto milostivom
+                    jubilejnom roku, môžeme zakúšať Jeho spaľujúcu lásku o to viac! To je cesta aj pre nás!
+                    Nechať sa osloviť a zapáliť Božou spaľujúcou láskou, ktorá dokáže rozdúchať nový oheň,
+                    našich vyhasnutých sŕdc.
+                </p>
+            </div>
+        </div>
+    </section>
 
-
-  <!--==========================
-    Footer
-  ============================-->
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-
-          <div class="col-lg-3 col-md-6 footer-contact">
-
-            <div class="social-links">
-              <a href="https://www.facebook.com/domankykolesarovej/" ><i class="fa fa-facebook"></i></a>
-              <a href="https://www.instagram.com/ankin_domcek"><i class="fa fa-instagram"></i></a>
-
+    <!-- Hostia Section -->
+    <section id="hostia" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Hostia</h2>
+            <p class="section-description">
+                Pripravujeme
+            </p>
+        </div>
+        <!--
+        <div class="hostia-grid">
+            <div class="host-card fade-in">
+                <div class="host-avatar">
+                    <img src="img/host1.png" alt="Portrait of Martin Kováč">
+                </div>
+                <div class="host-content">
+                    <h3 class="host-name">Martin Kováč</h3>
+                    <p class="host-role">Hlavný DJ a producent</p>
+                    <p class="host-description">
+                        Jeden z najvýraznejších slovenských DJ-ov mladej generácie. Známy svojimi energickými setmi
+                        a jedinečným mixom elektroniky s populárnymi hitmi.
+                    </p>
+                </div>
             </div>
 
-          </div>
+            <div class="host-card fade-in">
+                <div class="host-avatar">
+                    <img src="img/host2.png" alt="Portrait of Lucia Novák">
+                </div>
+                <div class="host-content">
+                    <h3 class="host-name">Lucia Novák</h3>
+                    <p class="host-role">Speváčka a songwriter</p>
+                    <p class="host-description">
+                        Mladá talentovaná umelkyňa, ktorá získala popularitu vďaka svojím autentickým textom
+                        a nezameniteľnému hlasu. Jej vystúpenie bude určite magické.
+                    </p>
+                </div>
+            </div>
 
+            <div class="host-card fade-in">
+                <div class="host-avatar">
+                    <img src="img/host3.png" alt="Portrait of Tomáš Urban">
+                </div>
+                <div class="host-content">
+                    <h3 class="host-name">Tomáš Urban</h3>
+                    <p class="host-role">Street art umelec</p>
+                    <p class="host-description">
+                        Uznávaný grafický umelec a ilustrátor, ktorý vytvorí počas festivalu živé murálne dielo
+                        s účasťou návštevníkov.
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
+        -->
+    </section>
 
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong>Domček</strong>. All Rights Reserved
-      </div>
+    <!-- Program Section -->
+    <section id="program" class="section program">
+        <div class="section-header">
+            <h2 class="section-title">Program festivalu</h2>
+            <p class="section-description">
+                Program pripravujeme
+            </p>
+        </div>
 
-    </div>
-  </footer><!-- #footer -->
+        <div class="program-container">
+            <div class="program-tabs" role="tablist">
+                <button class="tab-button active" data-day="day-0" role="tab" aria-selected="true" aria-controls="day-0">Štvrtok</button>
+                <button class="tab-button" data-day="day-1" role="tab" aria-selected="false" aria-controls="day-1">Piatok</button>
+                <button class="tab-button" data-day="day-2" role="tab" aria-selected="false" aria-controls="day-2">Sobota</button>
+                <button class="tab-button" data-day="day-3" role="tab" aria-selected="false" aria-controls="day-3">Nedeľa</button>
+                <button class="tab-button" data-day="day-4" role="tab" aria-selected="false" aria-controls="day-4">Pondelok</button>
+            </div>
 
-  <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+            <!-- Wrapper for horizontally scrollable days -->
+            <div class="program-days-wrapper">
+                <div class="program-day active" id="day-0" role="tabpanel" aria-labelledby="day-0-tab">
+                <div class="day-header">
+                    <h3 class="day-title">Otvárací deň</h3>
+                    <p class="day-date">Štvrtok, 14. August 2025</p>
+                </div>
+                <!--
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="event-time">16:00</div>
+                        <div class="event-title">Slávnostné otvorenie</div>
+                        <div class="event-description">Privítanie účastníkov a predstavenie programu festivalu</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="event-time">17:30</div>
+                        <div class="event-title">Workshop: Základy DJingu</div>
+                        <div class="event-description">Interaktívny workshop s profesionálnym DJ vybavením</div>
+                        <div class="event-speaker">S Martinom Kováčom</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="event-time">20:00</div>
+                        <div class="event-title">Opening Party</div>
+                        <div class="event-description">Večerná párty s lokálnymi DJ-mi a welcome drinkami</div>
+                    </div>
+                </div>
+                -->
+            </div>
 
-  <!-- JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-migrate.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/superfish/hoverIntent.js"></script>
-  <script src="lib/superfish/superfish.min.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
-  <script src="lib/venobox/venobox.min.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+                <div class="program-day" id="day-1" role="tabpanel" aria-labelledby="day-1-tab">
+                <div class="day-header">
+                    <h3 class="day-title">ON PRVÝ MILOVAL – SKUTOČNOSŤ</h3>
+                    <p class="day-date">Piatok, 15. August 2025</p>
+                </div>
+                <!--
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="event-time">14:00</div>
+                        <div class="event-title">Acoustic Stage</div>
+                        <div class="event-description">Vystúpenia mladých talentov s akustickými nástrojmi</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="event-time">18:00</div>
+                        <div class="event-title">Lucia Novák Live</div>
+                        <div class="event-description">Exkluzívny koncert s novými piesňami a premiérami</div>
+                        <div class="event-speaker">Headliner vystúpenie</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="event-time">21:00</div>
+                        <div class="event-title">Electronic Night</div>
+                        <div class="event-description">Nočný elektronický program s top DJ-mi až do rána</div>
+                    </div>
+                </div>
+                -->
+            </div>
 
-  <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
+                <div class="program-day" id="day-2" role="tabpanel" aria-labelledby="day-2-tab">
+                <div class="day-header">
+                    <h3 class="day-title">NEUSTÁLE MILUJE – SKÚSENOSŤ</h3>
+                    <p class="day-date">Sobota, 16. August 2025</p>
+                </div>
+                <!--
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="event-time">10:00</div>
+                        <div class="event-title">Murálny workshop</div>
+                        <div class="event-description">Tvorba kolektívneho umeleckého diela s profesionálnym umelcom</div>
+                        <div class="event-speaker">S Tomášom Urbanom</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="event-time">15:00</div>
+                        <div class="event-title">Fashion Show</div>
+                        <div class="event-description">Prehliadka mladých slovenských dizajnérov a značiek</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="event-time">19:00</div>
+                        <div class="event-title">Art Exhibition Opening</div>
+                        <div class="event-description">Vernisáž výstavy mladých umelcov s koktejlom</div>
+                    </div>
+                </div>
+                -->
+            </div>
 
-  <!-- Template Main Javascript File -->
-  <script src="js/main.js"></script>
+                <div class="program-day" id="day-3" role="tabpanel" aria-labelledby="day-3-tab">
+                <div class="day-header">
+                    <h3 class="day-title">MY MILUJEME, LEBO... – ODPOVEĎ</h3>
+                    <p class="day-date">Nedeľa, 17. August 2025</p>
+                </div>
+                <!--
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="event-time">11:00</div>
+                        <div class="event-title">VR Gaming Zone</div>
+                        <div class="event-description">Zážitky vo virtuálnej realite s najnovšími technológiami</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="event-time">16:00</div>
+                        <div class="event-title">Tech Talk: Budúcnosť hudby</div>
+                        <div class="event-description">Diskusia o technológiách v hudobnom priemysle a AI</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="event-time">20:00</div>
+                        <div class="event-title">Neon Party</div>
+                        <div class="event-description">Futuristická párty s LED show a holografickými projekciami</div>
+                    </div>
+                </div>
+                -->
+            </div>
+
+                <div class="program-day" id="day-4" role="tabpanel" aria-labelledby="day-4-tab">
+                <div class="day-header">
+                    <h3 class="day-title">Záverečný deň</h3>
+                    <p class="day-date">Pondelok, 18. August 2025</p>
+                </div>
+                <!--
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="event-time">15:00</div>
+                        <div class="event-title">Talent Show</div>
+                        <div class="event-description">Súťaž mladých talentov s hodnotnou cenou a profesionálnou porotou</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="event-time">19:00</div>
+                        <div class="event-title">Main Stage Finale</div>
+                        <div class="event-description">Spoločné vystúpenie všetkých headlinerov a špeciálnych hostí</div>
+                        <div class="event-speaker">Všetci účinkujúci</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="event-time">22:00</div>
+                        <div class="event-title">Closing Ceremony</div>
+                        <div class="event-description">Rozlúčka s ohňostrojom a after party do rána</div>
+                    </div>
+                </div>
+                -->
+            </div>
+            </div> <!-- End of program-days-wrapper -->
+        </div>
+    </section>
+
+    <!-- Chcem prísť Section -->
+    <section id="chcem-prist" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Chcem prísť</h2>
+            <p class="section-description">
+                Vyber si akým spôsobom sa chceš zúčastniť festivalu.
+            </p>
+        </div>
+
+        <div class="tickets-grid">
+            <div class="ticket-card fade-in">
+                <div class="ticket-header">
+                    <h3>Dobrovoľník</h3>
+                </div>
+                <div class="ticket-image-container">
+                    <img src="img/ticket-dobrovolnik.jpg" alt="Dobrovoľník na festivale" class="ticket-image">
+                </div>
+                <div class="ticket-content">
+                    <p class="ticket-description">Všetky naše akcie sú postavené na nezištnej službe druhým. Pridaj sa aj ty do našej dobrovoľníckej rodiny.</p>
+                    <p class="ticket-perks">Dobrovoľník na festivale od 17 rokov.</p>
+                    <p class="ticket-perks">Grátis dúchovná obnova pred festivalom a to od utorka do štvrtka</p>
+                    <p class="ticket-perks">Možnosť uplatniť študentskú alebo ZKSM zľavu.</p>
+                    <p class="ticket-price">90 € / 80 €</p>
+                    <a href="https://forms.gle/F1quVADMLMZVJv9V6" target="_blank" rel="noopener noreferrer" class="btn btn-primary ticket-button">Prihlásiť sa</a>
+                </div>
+            </div>
+
+            <div class="ticket-card fade-in premium"> <!-- Added 'premium' class for potential distinct styling -->
+                <div class="ticket-header">
+                    <h3>Účastník</h3>
+                </div>
+                <div class="ticket-image-container">
+                    <img src="img/ticket-ucastnik.jpg" alt="Účastník festivalu" class="ticket-image">
+                </div>
+                <div class="ticket-content">
+                    <p class="ticket-description">Festival od štvrtku do pondelka v super spoločenstve, radosti a s krásnymi zážitkami.</p>
+                    <p class="ticket-perks">Účastník festivalu od 15 do 35 rokov.</p>
+                    <p class="ticket-perks">Možnosť uplatniť študentskú alebo ZKSM zľavu.</p>
+                    <p class="ticket-price">90 € / 80 €</p>
+                    <a href="https://forms.gle/F1quVADMLMZVJv9V6" target="_blank" rel="noopener noreferrer" class="btn btn-primary ticket-button">Prihlásiť sa</a>
+                </div>
+            </div>
+
+            <div class="ticket-card fade-in">
+                <div class="ticket-header">
+                    <h3>Deň spoločenstva</h3>
+                </div>
+                <div class="ticket-image-container">
+                    <img src="img/ticket-den-spolocenstva.jpg" alt="Deň spoločenstva na festivale" class="ticket-image">
+                </div>
+                <div class="ticket-content">
+                    <p class="ticket-description">Jednodňový vstup pre každého kto si chce zaspomínať na svoj čas strávený v Domčeku, alebo naopak, spoznať Domček a bl. Anku.</p>
+                    <p class="ticket-perks">Kľudne príďte celá rodina.</p>
+                    <p class="ticket-price">-</p>
+                    <a href="#" class="btn btn-primary ticket-button disabled-button" aria-disabled="true">Čoskoro</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donations Section -->
+    <section id="podporte-nas" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Podporte nás</h2>
+            <p class="section-description">
+                Za tieto peniaze si vieme požičať bezpečný programový stan na Festival radosti.
+            </p>
+        </div>
+
+        <div class="donations-container">
+            <div class="progress-section">
+                <h3>Cieľ zbierky: <span id="total-goal-amount">3900</span> €</h3>
+                <p>Aktuálne vyzbierané: <span id="current-donated-amount">0</span> €</p>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-track">
+                        <div class="progress-bar-fill" id="donationProgressBarFill" style="width: 0%;"></div> <!-- Example: 1250/5000 = 25% -->
+                    </div>
+                    <div class="progress-goals">
+                        <div class="goal-marker" style="left: 25%;" data-goal-amount="1000">
+                            <span class="goal-pin"></span>1000€
+                        </div>
+                        <div class="goal-marker" style="left: 51%;" data-goal-amount="2000">
+                            <span class="goal-pin"></span>2000€
+                        </div>
+                        <div class="goal-marker" style="left: 76%;" data-goal-amount="3000">
+                            <span class="goal-pin"></span>3000€
+                        </div>
+                    </div>
+                </div>
+                <p>Aktualizujeme manuálne každých pár dní</p>
+            </div>
+
+            <div class="donation-form-section">
+                <h4>Chcem prispieť</h4>
+                <div class="donation-amount-options">
+                    <div class="predefined-amount-option">
+                        <input type="radio" id="amount10" name="donationAmountSelection" value="10">
+                        <label for="amount10">10 €</label>
+                    </div>
+                    <div class="predefined-amount-option">
+                        <input type="radio" id="amount20" name="donationAmountSelection" value="20" checked>
+                        <label for="amount20">20 €</label>
+                    </div>
+                    <div class="predefined-amount-option">
+                        <input type="radio" id="amount50" name="donationAmountSelection" value="50">
+                        <label for="amount50">50 €</label>
+                    </div>
+                    <div class="predefined-amount-option">
+                        <input type="radio" id="amount100" name="donationAmountSelection" value="100">
+                        <label for="amount100">100 €</label>
+                    </div>
+                    <div class="predefined-amount-option">
+                        <input type="radio" id="amountCustom" name="donationAmountSelection" value="custom">
+                        <label for="amountCustom">Vlastná suma</label>
+                    </div>
+                </div>
+                <div class="amount-input-group" id="customAmountInputGroup" style="display: none;">
+                    <label for="customDonationAmount" class="sr-only">Vlastná suma</label>
+                    <input type="number" id="customDonationAmount" name="customDonationAmount" placeholder="Zadajte sumu" min="1">
+                    <span class="currency-symbol">€</span>
+                </div>
+
+                <h4>Spôsob platby:</h4>
+                <div class="payment-options">
+                    <div class="payment-option">
+                        <input type="radio" id="paymeLink" name="paymentMethod" value="link" checked>
+                        <label for="paymeLink">Payme Link</label>
+                    </div>
+                    <div class="payment-option">
+                        <input type="radio" id="manualPayment" name="paymentMethod" value="manual">
+                        <label for="manualPayment">Manuálna platba</label>
+                    </div>
+                </div>
+
+                <div class="payment-details">
+                    <div id="linkDisplay" class="payment-info active">
+                        <p>Kliknutím na tlačidlo budete presmerovaný do bankovej aplikácie na vašom mobile, alebo na webovú stránku s QR kódom a údajmi o platbe.</p>
+                        <a href="https://payme.sk/your-unique-link" target="_blank" class="btn btn-primary donation-pay-button payme-logo-button">
+                            <img src="img/payme-logo.svg" alt="Zaplatiť cez Payme" class="payme-logo-in-button">
+                        </a>
+                        <!-- TODO: Replace with actual Payme link -->
+                    </div>
+                    <div id="manualDisplay" class="payment-info">
+                        <p>Údaje pre manuálnu platbu (prevod na účet):</p>
+                        <p><strong>IBAN:</strong> SK52 1100 0000 0029 4304 5043</p>
+                        <p><strong>Variabilný symbol:</strong> 20259999</p>
+                        <p><strong>Správa pre prijímateľa:</strong> Prispevok na cinnost. Festival radosti</p>
+                        <!-- TODO: Replace with actual IBAN and details -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Small Photo Gallery -->
+        <div class="gallery-wrapper">
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="img/gallery/1.jpg" alt="Fotka z Festivalu Radosti - minulý rok 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/gallery/2.jpg" alt="Fotka z Festivalu Radosti - minulý rok 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/gallery/3.jpg" alt="Fotka z Festivalu Radosti - minulý rok 3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Naši Sponzori</h2>
+            <p class="section-description">Ďakujeme našim partnerom za podporu Festivalu Radosti.</p>
+        </div>
+        <div class="sponsors-container">
+            <div class="sponsors-grid">
+                <!-- Sponsor Logos -->
+                <div class="sponsor-logo">
+                    <img src="img/supporters/Ministerstvo_farba_text.png" alt="Logo Sponzora Ministerstvo">
+                </div>
+                <div class="sponsor-logo">
+                    <img src="img/supporters/2.png" alt="Logo Sponzora 2">
+                </div>
+                <div class="sponsor-logo">
+                    <img src="img/supporters/3.png" alt="Logo Sponzora 3">
+                </div>
+                <div class="sponsor-logo">
+                    <img src="img/supporters/4.png" alt="Logo Sponzora 4">
+                </div>
+                <div class="sponsor-logo">
+                    <img src="img/supporters/5.png" alt="Logo Sponzora 5">
+                </div>
+                <div class="sponsor-logo">
+                    <img src="img/supporters/6.png" alt="Logo Sponzora 6">
+                </div>
+                <div class="sponsor-logo">
+                    <img src="img/supporters/7.png" alt="Logo Sponzora 7">
+                </div>
+                <div class="sponsor-logo">
+                    <img src="img/supporters/8.png" alt="Logo Sponzora 8">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Často kladené otázky (Q&A)</h2>
+        </div>
+        <div class="faq-container">
+            <ul class="faq-list">
+                <li>
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq1-answer">
+                        <span class="faq-question-text">Pre akú vekovú kategóriu je Festival radosti určený?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div id="faq1-answer" class="faq-answer" role="region">
+                        <p>Na Festival radosti pozývame mladých od 15 – 35 rokov. Ak ešte nemáš 18 rokov, je potrebné nám po registrácii zaslať Potvrdenie rodiča, resp. právneho zástupcu.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq2-answer">
+                        <span class="faq-question-text">Som študentom, alebo členom ZKSM – mám nárok na zľavu?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div id="faq2-answer" class="faq-answer" role="region">
+                        <p>Zľava pre študentov a členov ZKSM je 10€.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq3-answer">
+                        <span class="faq-question-text">Dokedy sa môžem prihlásiť na Festival radosti?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div id="faq3-answer" class="faq-answer" role="region">
+                        <p>Dobrovoľníci aj účastníci sa môžu prihlásiť do 1.8.2025.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq4-answer">
+                        <span class="faq-question-text">Čo robiť, ak som sa zaregistroval, ale Festivalu radosti sa nakoniec nemôžem zúčastniť?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div id="faq4-answer" class="faq-answer" role="region">
+                        <p>Ak sa po registrácii nemôžeš Festivalu radosti zúčastniť, napíš nám na pute@domcek.org, alebo nám napíš do správy na FB alebo IG.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq5-answer">
+                        <span class="faq-question-text">Za akých podmienok môžem pomôcť na Festivale radosti ako dobrovoľník?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div id="faq5-answer" class="faq-answer" role="region">
+                        <p>Ak máš minimálne 17 rokov a bol si účastníkom na minimálne 1 púti organizovaných Domčekom, určite ťa pozývame do služby.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq6-answer">
+                        <span class="faq-question-text">Bude na Festivale radosti zabezpečená strava?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div id="faq6-answer" class="faq-answer" role="region">
+                        <p>Na Festivale radosti bude samozrejme strava zabezpečená. Vo štvrtok je večera z vlastných zásob, stravu na ostatné dni zabezpečuje Domček. Ak máš nejakú diétu, napíš nám to do poznámky pri registrácii.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq7-answer">
+                        <span class="faq-question-text">Bude na Festivale radosti zabezpečené ubytovanie?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div id="faq7-answer" class="faq-answer" role="region">
+                        <p>Áno, ubytovanie je v cene Festivalu radosti. Je nutné si ale so sebou priniesť spacák.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq8-answer">
+                        <span class="faq-question-text">Ako je zabezpečená doprava na Festival radosti?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div id="faq8-answer" class="faq-answer" role="region">
+                        <p>Po registrácii dostaneš prístup k zdieľanej tabuľke, kde môžeš odvoz zabezpečiť sebe, alebo odvoz môžeš ponúknuť práve ty.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq9-answer">
+                        <span class="faq-question-text">Bude po skončení programu zabezpečený odvoz do Michaloviec?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div id="faq9-answer" class="faq-answer" role="region">
+                        <p>V pondelok po skončení programu bude v prípade dostatočného záujmu zabezpečený odvoz do Michaloviec autobusom o 11:00 hod (príplatok 2€).</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq10-answer">
+                        <span class="faq-question-text">Kde dostanem odpovede na moje otázky?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div id="faq10-answer" class="faq-answer" role="region">
+                        <p>Ak si sa nedozvedel odpovede na tvoje otázky v tejto sekcii, neváhaj nás kontaktovať na pute@domcek.org, alebo nám napíš do správy na FB alebo IG.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Kontakt Section -->
+    <section id="kontakt" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Kontaktuj nás</h2>
+            <p class="section-description">Máš otázky? Sme tu pre teba!</p>
+        </div>
+        <div class="kontakt-container">
+            <div class="kontakt-details">
+                <div class="kontakt-item">
+                    <h3>Email</h3>
+                    <p><a href="mailto:pute@domcek.org">pute@domcek.org</a></p>
+                </div>
+                <div class="kontakt-item">
+                    <h3>Telefón</h3>
+                    <p><a href="tel:+421911912598">0911 912 598</a></p>
+                </div>
+                <div class="kontakt-item">
+                    <h3>Adresa</h3>
+                    <p>Hlavná 94<br>Vysoká nad Uhom<br>072 14 Pavlovce nad Uhom<br>Slovensko</p>
+                </div>
+            </div>
+            <div class="kontakt-social">
+                <h3>Sledujte nás</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/domankykolesarovej/" target="_blank" rel="noopener noreferrer" aria-label="Dom Anky Kolesárovej na Facebooku">
+                        <img src="img/social/fb.svg" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/ankin_domcek/" target="_blank" rel="noopener noreferrer" aria-label="Ankin Domček na Instagrame">
+                        <img src="img/social/ig.svg" alt="Instagram">
+                    </a>
+                    <a href="https://www.youtube.com/@ankin_domcek" target="_blank" rel="noopener noreferrer" aria-label="Ankin Domček na YouTube">
+                        <img src="img/social/yt.svg" alt="YouTube">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Footer Section -->
+    <footer class="site-footer section">
+        <div class="footer-container">
+            <div class="footer-column footer-logo-anka">
+                <a href="https://annakolesarova.sk/" target="_blank" rel="noopener noreferrer">
+                    <img src="img/footer/anka.webp" alt="Logo Anka Kolesárová" height="100">
+                </a>
+            </div>
+            <div class="footer-column footer-links-copyright">
+                <p><a href="https://domcek.org" target="_blank" rel="noopener noreferrer">www.domcek.org</a></p>
+                <p><a href="https://annakolesarova.sk/" target="_blank" rel="noopener noreferrer">www.annakolesarova.sk</a></p>
+                <p>Všetky práva vyhradené &copy; <span id="currentYear"></span></p>
+            </div>
+            <div class="footer-column footer-logo-domcek">
+                <a href="https://domcek.org" target="_blank" rel="noopener noreferrer">
+                    <img src="img/footer/domcek.webp" alt="Logo Domček" height="50">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
-
 </html>
