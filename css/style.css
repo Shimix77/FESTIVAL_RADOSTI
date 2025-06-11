@@ -207,7 +207,7 @@ body {
   position: relative;
   overflow: hidden;
   padding-top: 80px; /* Account for fixed navbar */
-  background-image: url('../img/hero.jpg'); /* Path relative to css/style.css */
+  background-image: url('../img/hero.png'); /* Path relative to css/style.css */
   background-size: cover; /* Ensure the image covers the entire section */
   background-position: center center; /* Center the image */
   background-repeat: no-repeat;
@@ -1183,6 +1183,11 @@ body {
   }
   .host-content {
       padding: 1.5rem; /* Adjust padding for mobile */
+  }
+
+  .hero {
+    /* Move hero image to the left to make its right-side content more visible on small screens */
+    background-position: 70% center; /* Adjust 70% as needed */
   }
 
 
