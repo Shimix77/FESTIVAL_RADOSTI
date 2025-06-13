@@ -159,7 +159,7 @@ body {
   backdrop-filter: blur(20px);
   padding: 2rem;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem; /* Adjusted gap for mobile menu items */
   z-index: 999;
 }
 
