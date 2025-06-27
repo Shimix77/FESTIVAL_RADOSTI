@@ -342,6 +342,32 @@ body {
   box-shadow: 0 12px 40px rgba(249, 212, 35, 0.4);
 }
 
+/* Responsive adjustments for medium-sized screens to prevent nav wrapping */
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .nav-container {
+    padding: 0 1.5rem;
+  }
+  .nav-menu {
+    gap: 1rem; /* Reduce gap between menu items */
+  }
+  .nav-item a {
+    font-size: 0.8rem; /* Slightly smaller font size */
+  }
+}
+
+/* Responsive adjustments for medium-sized screens to prevent nav wrapping */
+@media (min-width: 769px) and (max-width: 999px) {
+  .nav-container {
+    padding: 0 1.5rem;
+  }
+  .nav-menu {
+    gap: 1rem; /* Reduce gap between menu items */
+  }
+  .nav-item a {
+    font-size: 0.4rem; /* Slightly smaller font size */
+  }
+}
+
 /* Section Styling */
 .section {
   padding: 2rem 2rem; /* Further reduced top/bottom padding to 2rem */
@@ -988,134 +1014,6 @@ body {
   width: 100%;
   justify-content: center;
 }
-
-/* FAQ Section Styles */
-.faq-container {
-  max-width: 800px; /* Adjust as needed */
-  margin: 0 auto;
-  padding: 0 1rem; /* Add some padding on smaller screens */
-}
-
-.faq-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.faq-list li {
-  border-bottom: 1px solid var(--border-color);
-}
-
-.faq-list li:last-child {
-  border-bottom: none;
-}
-
-.faq-question {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 1.5rem 0;
-  text-align: left;
-  font-size: 1.1rem; /* Adjust as needed */
-  font-weight: 600;
-  color: var(--text-primary);
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-.faq-question-text {
-  flex-grow: 1; /* Allows text to take up available space */
-  margin-right: 1rem; /* Space between text and icon */
-  /* Optional: helps with very long words on small screens if they cause overflow */
-  /* word-break: break-word; */
-}
-
-.faq-question:hover,
-.faq-question:focus {
-  color: #FF4E50; /* Use a solid color from your primary gradient for hover */
-  /* If using a text gradient, this won't work directly.
-     You might need to apply the gradient to a span inside the button.
-     For simplicity, a solid color hover is used here. */
-}
-
-.faq-question:hover .faq-question-text,
-.faq-question:focus .faq-question-text {
-  color: #FF4E50; /* Ensure text within the span also gets hover color */
-}
-/* Fallback for when .faq-question-text is not used, though less ideal for layout */
-.faq-question:hover,
-.faq-question:focus {
-   color: #FF4E50;
-}
-
-.faq-icon {
-  display: inline-block;
-  width: 20px; /* Adjust size */
-  height: 20px; /* Adjust size */
-  margin-left: 1rem;
-  /* transition: transform 0.3s ease; /* If you want the whole icon to rotate on expand */
-  position: relative;
-  flex-shrink: 0; /* Prevents icon from shrinking */
-}
-
-.faq-icon::before,
-.faq-icon::after {
-  content: '';
-  position: absolute;
-  background-color: var(--text-primary); /* Icon color */
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-.faq-question:hover .faq-icon::before,
-.faq-question:hover .faq-icon::after,
-.faq-question:focus .faq-icon::before,
-.faq-question:focus .faq-icon::after {
-   background-color: #FF4E50; /* Match text hover color */
-}
-
-/* Plus icon */
-.faq-icon::before { /* Horizontal bar */
-  top: 50%;
-  left: 2px; /* Adjust for centering */
-  width: 16px; /* Bar length */
-  height: 2px; /* Bar thickness */
-  transform: translateY(-50%);
-}
-.faq-icon::after { /* Vertical bar */
-  top: 2px; /* Adjust for centering */
-  left: 50%;
-  width: 2px; /* Bar thickness */
-  height: 16px; /* Bar length */
-  transform: translateX(-50%);
-}
-
-/* Minus icon when expanded */
-.faq-question[aria-expanded="true"] .faq-icon::after {
-  transform: translateX(-50%) rotate(90deg); /* Hide vertical bar by rotating it */
-}
-
-.faq-answer {
-  padding-left: 0; /* Assuming no horizontal padding needed directly on the answer div */
-  padding-right: 0;
-  padding-top: 0; /* Ensure no top padding initially */
-  padding-bottom: 0; /* Ensure no bottom padding initially */
-  color: var(--text-secondary);
-  line-height: 1.6;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease-out, padding-top 0.4s ease-out, padding-bottom 0.4s ease-out; /* Specific padding transitions */
-}
-
-.faq-answer p {
-  margin: 0;
-  /* padding-top is now handled by the .faq-answer div's padding when expanded by JS */
-}
-
-.faq-answer.active {
-  /* max-height will be set by JS to scrollHeight */
-}
-
 
 /* Animations */
 @keyframes fadeInUp {
