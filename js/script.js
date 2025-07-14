@@ -93,7 +93,7 @@ window.addEventListener('load', () => {
   window.addEventListener('scroll', function() {
       const navbar = document.querySelector('.navbar');
       if (navbar) {
-          if (window.scrollY > 50) {
+          if (window.scrollY > 700) {
               navbar.classList.add('scrolled');
           } else {
               navbar.classList.remove('scrolled');
@@ -387,4 +387,3 @@ window.addEventListener('load', () => {
           }
       }
   });
-  
