@@ -107,10 +107,12 @@ window.addEventListener('load', () => {
       rootMargin: '0px 0px -50px 0px'
   };
   
-  const observer = new IntersectionObserver(function(entries) {
-      entries.forEach(entry => {
+  const observer = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => { 
           if (entry.isIntersecting) {
               entry.target.classList.add('visible');
+              // Stop observing the element after it has become visible
+              observer.unobserve(entry.target);
           }
       });
   }, observerOptions);
@@ -172,12 +174,14 @@ window.addEventListener('load', () => {
   
       const timelineItems = document.querySelectorAll('.timeline-item');
       timelineItems.forEach((item, index) => {
-          item.style.transitionDelay = `${index * 0.1}s`;
+          item.style.transitionDelay = `${index * 0.05}s`;
           observer.observe(item);
+          item.classList.add('visible'); //Make the items visible by default
       });
   
       // Scroll to hash if present in URL
       scrollToHash();
+  
   
       // Donation Amount Selection
       const donationAmountRadios = document.querySelectorAll('input[name="donationAmountSelection"]');
@@ -288,7 +292,7 @@ window.addEventListener('load', () => {
         faqQuestions.forEach(button => {
             button.addEventListener('click', () => {
                 const isExpanded = button.getAttribute('aria-expanded') === 'true';
-                const answerId = button.getAttribute('aria-controls');
+                    const answerId = button.getAttribute('aria-controls');
                 const answerPanel = document.getElementById(answerId);
     
                 // Accordion behavior: If we are about to open this panel, close others.
@@ -366,6 +370,7 @@ window.addEventListener('load', () => {
             });
         });
       
+  
   });
   
   // Keyboard navigation for program tabs
