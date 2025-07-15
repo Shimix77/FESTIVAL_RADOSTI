@@ -9,8 +9,8 @@
   --light-theme-text-primary: #212529;
   --light-theme-text-secondary: #6C757D;
   --light-theme-border-color: #DEE2E6;
-  --light-theme-navbar-bg: rgba(255, 255, 255, 0.85); /* Lighter, slightly transparent for blur */
-  --light-theme-navbar-scrolled-bg: rgba(255, 255, 255, 0.95); /* More opaque when scrolled */
+  --light-theme-navbar-bg: rgba(255, 255, 255, 0.95); /* Lighter, slightly transparent for blur */
+  --light-theme-navbar-scrolled-bg: rgba(255, 255, 255, 0.85); /* More opaque when scrolled */
 
   /* Mapping to existing variable names for site-wide light theme application */
   --dark-bg: var(--light-theme-bg);
@@ -690,12 +690,16 @@ body {
   font-weight: 500;
   position: relative;
   overflow: hidden;
+  /* Adjust tab button width for horizontal layout */
+  width: auto; /* Let buttons take their content width */
+  display: inline-block; /* Ensure they line up horizontally */
+  text-align: center;
 }
 
 .tab-button.active {
   background: var(--primary-gradient);
   color: white;
-  border-color: transparent;
+  border: 1px solid var(--border-color);
 }
 
 .tab-button:hover:not(.active) {
@@ -1106,13 +1110,6 @@ body {
       justify-content: center; /* Align tabs to the center */
       padding-bottom: 10px; /* Add some space for the scrollbar if it appears */
       -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
-  }
-
-  .tab-button {
-      /* Adjust tab button width for horizontal layout */
-      width: auto; /* Let buttons take their content width */
-      display: inline-block; /* Ensure they line up horizontally */
-      text-align: center;
   }
 
   .timeline::before {
