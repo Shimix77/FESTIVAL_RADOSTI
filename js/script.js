@@ -107,10 +107,12 @@ window.addEventListener('load', () => {
       rootMargin: '0px 0px -50px 0px'
   };
   
-  const observer = new IntersectionObserver(function(entries) {
-      entries.forEach(entry => {
+  const observer = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => { 
           if (entry.isIntersecting) {
               entry.target.classList.add('visible');
+              // Stop observing the element after it has become visible
+              observer.unobserve(entry.target);
           }
       });
   }, observerOptions);
@@ -172,7 +174,7 @@ window.addEventListener('load', () => {
   
       const timelineItems = document.querySelectorAll('.timeline-item');
       timelineItems.forEach((item, index) => {
-          item.style.transitionDelay = `${index * 0.1}s`;
+          item.style.transitionDelay = `${index * 0.05}s`;
           observer.observe(item);
       });
   
