@@ -768,14 +768,15 @@ body {
 }
 
 .day-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0;
 }
 
 .day-date {
   font-size: 1.2rem;
   color: var(--text-secondary);
+  margin-bottom: 0.25rem;
 }
 
 .timeline {
