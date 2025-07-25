@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <!-- Inline Preloader CSS for faster perceived load -->
+    <style>
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #FFFFFF;
+            background-color: var(--light-theme-bg, #FFFFFF);
+            z-index: 99999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+        }
+        #preloader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .spinner {
+            border: 8px solid #e0e0e0;
+            border-top: 8px solid #FF4E50;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /* Style for the current page in the navigation */
+        .nav-menu .nav-item a.current-page,
+        .mobile-menu a.current-page {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+        .nav-menu .nav-item a.current-page::after {
+            width: 100%;
+            background: var(--accent-gradient);
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dobrovoľníci - Festival Radosti 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css"> <!-- Make sure path is correct -->
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://www.festival.domcek.org/dobrovolnici/">
+</head>
+<body>
+    <!-- Preloader Start -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+    <!-- Preloader End -->
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html#domov" class="logo-link">
+                <div class="logo">FESTIVAL RADOSTI</div>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html#tema">Téma</a></li>
+                <li class="nav-item"><a href="../index.html#hostia">Hostia</a></li>
+                <li class="nav-item"><a href="../index.html#program">Program</a></li>
+                <li class="nav-item"><a href="../index.html#podporte-nas">Podporte nás</a></li>
+                <li class="nav-item"><a href="#" class="current-page" aria-current="page">Dobrovoľníci&nbsp;♥</a></li>
+                <li class="nav-item"><a href="../index.html#faq">Q&A</a></li>
+                <li class="nav-item nav-item-highlight"><a href="../index.html#chcem-prist">Chcem prísť</a></li>
+            </ul>
+            <div class="hamburger" role="button" tabindex="0" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle navigation menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="../index.html#tema">Téma</a>
+                <a href="../index.html#hostia">Hostia</a>
+                <a href="../index.html#program">Program</a>
+                <a href="../index.html#podporte-nas">Podporte nás</a>
+                <a href="#" class="current-page" aria-current="page">Dobrovoľníci&nbsp;♥</a>
+                <a href="../index.html#faq">Q&A</a>
+                <a href="../index.html#chcem-prist" class="nav-item-highlight">Chcem prísť</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section for Volunteers -->
+    <section id="dobrovolnici-hero" class="hero hero-dobrovolnici">
+        <div class="hero-content">
+            <div class="hero-badge">Radosť • rozdávaním • rastie</div>
+            <h1 class="festival-title dobrovolnici-title">DOBROVOĽNÍCI</h1>
+            <p class="festival-subtitle"></p>
+            <div class="hero-buttons">
+                <a href="/" rel="noopener noreferrer" class="btn btn-primary">
+                    <span aria-hidden="true">⬅️</span>
+                    Späť na festival
+                </a>
+                <a href="#duchovna-obnova" class="btn btn-secondary">
+                    <span aria-hidden="true">ℹ️</span>
+                    INFORMÁCIE
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Duchovna Obnova Section -->
+    <section id="duchovna-obnova" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Duchovná obnova</h2>
+            <p class="section-description" style="max-width: 700px;">
+                Ako poďakovanie za tvoju službu ti ponúkame duchovnú obnovu, ktorá sa uskutoční pred samotným festivalom. Je to skvelá príležitosť na stíšenie, modlitbu a prípravu srdca na dni plné radosti a služby.
+            </p>
+        </div>
+        <div class="content-container" style="text-align: center; max-width: 800px; margin: 0 auto; color: var(--text-secondary);">
+            <h3 style="color: var(--text-primary); font-size: 1.5rem; margin-bottom: 1rem;">Kedy a kde?</h3>
+            <p style="font-size: 1.1rem; line-height: 1.7;">
+                Duchovná obnova pre všetkých dobrovoľníkov sa začína v <strong>utorok, 12. augusta 2025 o 18:00</strong> a potrvá do začiatku festivalu vo štvrtok.
+                <br>
+                Ubytovanie a strava počas duchovnej obnovy sú pre dobrovoľníkov zabezpečené.
+                <br>
+                Ak sa nemôžeš zúčastniť prosíme, daj nám o tom vedieť mailom na <strong>pute@domcek.org</strong>
+            </p>
+            <p style="margin-top: 2rem; font-size: 1.1rem;">Tešíme sa na spoločný čas s tebou!</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="site-footer section">
+        <div class="footer-container">
+            <div class="footer-column footer-logo-anka">
+                <a href="https://annakolesarova.sk/" target="_blank" rel="noopener noreferrer">
+                    <img src="../img/footer/anka.webp" alt="Logo Anka Kolesárová" height="100">
+                </a>
+            </div>
+            <div class="footer-column footer-links-copyright">
+                <p><a href="https://domcek.org" target="_blank" rel="noopener noreferrer">www.domcek.org</a></p>
+                <p><a href="https://annakolesarova.sk/" target="_blank" rel="noopener noreferrer">www.annakolesarova.sk</a></p>
+                <p>Všetky práva vyhradené &copy; <span id="currentYear"></span></p>
+            </div>
+            <div class="footer-column footer-logo-domcek">
+                <a href="https://domcek.org" target="_blank" rel="noopener noreferrer">
+                    <img src="../img/footer/domcek.webp" alt="Logo Domček" height="50">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+
+</body>
+</html>

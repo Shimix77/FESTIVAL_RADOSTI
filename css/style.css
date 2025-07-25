@@ -213,6 +213,10 @@ body {
   background-repeat: no-repeat;
 }
 
+.hero-dobrovolnici {
+  background-image: url('../img/dobrovolnici/hero.png');
+}
+
 .hero::before {
   content: ''; /* Ensure content property is present for pseudo-elements */
   position: absolute; /* Ensure position is set for pseudo-elements */
@@ -259,6 +263,10 @@ body {
   background-clip: text;
   line-height: 1.1;
   animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.dobrovolnici-title {
+  font-size: clamp(1.5rem, 5vw, 4rem);
 }
 
 .festival-subtitle {
