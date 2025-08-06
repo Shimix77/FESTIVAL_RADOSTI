@@ -761,6 +761,28 @@ body {
   color: var(--text-primary);
 }
 
+.tab-button.final-day {
+  /* Add a visual gap before this special button */
+  margin-left: 1.5rem;
+
+  /* A more subdued, "grey-ish" default style */
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+.tab-button.final-day:hover:not(.active) {
+  /* A subtle grey hover effect */
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+}
+
+.tab-button.final-day.active {
+  /* A solid grey active state, distinct from the main gradient */
+  background: var(--text-secondary);
+  border-color: var(--text-secondary);
+  color: white;
+}
+
 .program-day {
   display: none;
   animation: fadeIn 0.5s ease;
