@@ -1624,20 +1624,18 @@ html {
 
 /* Dakujeme Section - Video */
 .video-responsive-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    /* Using the modern `aspect-ratio` property is a cleaner way to handle this. */
+    /* It correctly calculates height based on the *actual* width of the element, even with max-width. */
+    aspect-ratio: 16 / 9;
     max-width: 900px; /* Max width for the video container */
     margin: 2rem auto 0 auto; /* Centered with top margin */
     border-radius: 16px; /* Rounded corners */
     box-shadow: 0 15px 40px rgba(0,0,0,0.2); /* Nice shadow */
+    overflow: hidden; /* This is important to make the iframe corners respect the border-radius. */
 }
 
 .video-responsive-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
+    /* The iframe can now be a simple block element that fills its container. */
     width: 100%;
     height: 100%;
     border: 0;
