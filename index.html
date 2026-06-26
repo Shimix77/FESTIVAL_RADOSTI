@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="sk">
+
 <head>
     <!-- Inline Preloader CSS for faster perceived load -->
     <style>
@@ -10,59 +11,80 @@
             width: 100%;
             height: 100%;
             /* Use a fallback background color in case CSS variables aren't loaded yet, then override with variable */
-            background-color: #FFFFFF; /* Fallback for light theme */
-            background-color: var(--light-theme-bg, #FFFFFF); /* Match page background, with fallback */
-            z-index: 99999; /* Ensure it's on top of everything */
+            background-color: #FFFFFF;
+            /* Fallback for light theme */
+            background-color: var(--light-theme-bg, #FFFFFF);
+            /* Match page background, with fallback */
+            z-index: 99999;
+            /* Ensure it's on top of everything */
             display: flex;
             justify-content: center;
             align-items: center;
             opacity: 1;
-            transition: opacity 0.5s ease-out; /* For smooth fade-out */
+            transition: opacity 0.5s ease-out;
+            /* For smooth fade-out */
         }
+
         #preloader.hidden {
             opacity: 0;
-            pointer-events: none; /* Allow interaction with page content underneath after fade */
+            pointer-events: none;
+            /* Allow interaction with page content underneath after fade */
         }
+
         .spinner {
-            border: 8px solid #e0e0e0; /* Light grey for the track */
-            border-top: 8px solid #FF4E50; /* Using a primary accent color */
+            border: 8px solid #e0e0e0;
+            /* Light grey for the track */
+            border-top: 8px solid #FF4E50;
+            /* Using a primary accent color */
             border-radius: 50%;
             width: 60px;
             height: 60px;
             animation: spin 1s linear infinite;
         }
+
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Túžiš po premene? Tak sa neváhaj prihlásiť na 17. Festival radosti do Vysokej nad Uhom a to od 14.-17. augusta 2026.">
-    <meta name="keywords" content="Festival Radosti, Domček, Vysoká nad Uhom, Horiace Srdce, kresťanský festival, mládežnícky festival, duchovná obnova, Anka Kolesárová, 2025">
+    <meta name="description"
+        content="Túžiš po premene? Tak sa neváhaj prihlásiť na 17. Festival radosti do Vysokej nad Uhom a to od 14.-17. augusta 2026.">
+    <meta name="keywords"
+        content="Festival Radosti, Domček, Vysoká nad Uhom, Horiace Srdce, kresťanský festival, mládežnícky festival, duchovná obnova, Anka Kolesárová, 2025">
     <link rel="canonical" href="https://www.festival.domcek.org/">
 
     <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.festival.domcek.org/">
     <meta property="og:title" content="Festival Radosti 2026 - Premenení">
-    <meta property="og:description" content="Túžiš po premene? Tak sa neváhaj prihlásiť na 17. Festival radosti do Vysokej nad Uhom a to od 14.-17. augusta 2026.">
+    <meta property="og:description"
+        content="Túžiš po premene? Tak sa neváhaj prihlásiť na 17. Festival radosti do Vysokej nad Uhom a to od 14.-17. augusta 2026.">
     <meta property="og:image" content="https://www.festival.domcek.org/hero-plagat.png">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://www.festival.domcek.org/">
     <meta name="twitter:title" content="Festival Radosti 2026 - Premenení">
-    <meta name="twitter:description" content="Túžiš po premene? Tak sa neváhaj prihlásiť na 17. Festival radosti do Vysokej nad Uhom a to od 14.-17. augusta 2026.">
+    <meta name="twitter:description"
+        content="Túžiš po premene? Tak sa neváhaj prihlásiť na 17. Festival radosti do Vysokej nad Uhom a to od 14.-17. augusta 2026.">
     <meta name="twitter:image" content="https://www.festival.domcek.org/hero-plagat.png">
 
-    <title>Festival Radosti 2025</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Festival Radosti 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
+
 <body>
     <!-- Preloader Start -->
     <div id="preloader">
@@ -86,7 +108,8 @@
                 <li class="nav-item"><a href="#faq">Q&A</a></li>
                 <li class="nav-item nav-item-highlight"><a href="#chcem-prist">Chcem prísť</a></li>
             </ul>
-            <div class="hamburger" role="button" tabindex="0" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle navigation menu">
+            <div class="hamburger" role="button" tabindex="0" aria-expanded="false" aria-controls="mobileMenu"
+                aria-label="Toggle navigation menu">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -145,7 +168,7 @@
         </div>
     </section> -->
 
-    
+
 
     <section id="tema" class="section">
         <div class="tema">
@@ -153,12 +176,16 @@
                 <h2 class="section-title">Téma festivalu</h2>
                 <div class="tema-wrapper">
                     <p class="tema-text">
-                        Aj ty si sa chcel už toľko krát zmeniť... A nešlo to? Znova a znova prehra, pád a zdá sa, že to celé je len
-                        začarovaný kruh nevydarených pokusov. Koľkokrát sme chceli byť už iní, ale znova sme boli tam, kde na
+                        Aj ty si sa chcel už toľko krát zmeniť... A nešlo to? Znova a znova prehra, pád a zdá sa, že to
+                        celé je len
+                        začarovaný kruh nevydarených pokusov. Koľkokrát sme chceli byť už iní, ale znova sme boli tam,
+                        kde na
                         začiatku...
-                        No premena nie je v našej moci! Prichádza ako dar, ak sa necháme viesť Ježišom ako učeníci. Iba Ježiš
+                        No premena nie je v našej moci! Prichádza ako dar, ak sa necháme viesť Ježišom ako učeníci. Iba
+                        Ježiš
                         nás môže vyviesť z údolí našich dní do svetla, v ktorom môžeme byť skutočne premenení.
-                        A práve to môžeš zažiť aj Ty na tomto mieste – plnom premenení. Dobre je nám tu v Domčeku, pri zdroji
+                        A práve to môžeš zažiť aj Ty na tomto mieste – plnom premenení. Dobre je nám tu v Domčeku, pri
+                        zdroji
                         svetla, v ktorom spoluobjavujeme, že aj my sa môžeme stať svetlom sveta!
                     </p>
                     <!-- <div class="tema-video">
@@ -174,9 +201,9 @@
             </div>
         </div>
     </section>
-   
 
-    
+
+
 
     <section id="hostia" class="section">
         <div class="section-header">
@@ -185,7 +212,7 @@
                 Pripravujeme
             </p>
         </div>
-        
+
         <!-- <div class="hostia-grid">
             <div class="host-card fade-in">
                 <div class="host-avatar">
@@ -229,8 +256,8 @@
                 </div>
             </div>
         </div> -->
-       
-     </section>
+
+    </section>
 
     <section id="program" class="section program">
         <div class="section-header">
@@ -242,220 +269,224 @@
 
         <div class="program-container">
             <div class="program-tabs" role="tablist">
-                <button class="tab-button active" data-day="day-0" role="tab" aria-selected="true" aria-controls="day-0">Piatok</button>
-                <button class="tab-button" data-day="day-1" role="tab" aria-selected="false" aria-controls="day-1">Sobota</button>
-                <button class="tab-button" data-day="day-2" role="tab" aria-selected="false" aria-controls="day-2">Nedeľa</button>
-                <button class="tab-button" data-day="day-3" role="tab" aria-selected="false" aria-controls="day-3">Pondelok</button>
+                <button class="tab-button active" data-day="day-0" role="tab" aria-selected="true"
+                    aria-controls="day-0">Piatok</button>
+                <button class="tab-button" data-day="day-1" role="tab" aria-selected="false"
+                    aria-controls="day-1">Sobota</button>
+                <button class="tab-button" data-day="day-2" role="tab" aria-selected="false"
+                    aria-controls="day-2">Nedeľa</button>
+                <button class="tab-button" data-day="day-3" role="tab" aria-selected="false"
+                    aria-controls="day-3">Pondelok</button>
             </div>
 
 
             <div class="program-days-wrapper">
                 <div class="program-day active" id="day-0" role="tabpanel" aria-labelledby="day-0-tab">
-                <div class="day-header">
-                    <p class="day-date">Piatok, 14. August 2026</p>
-                    <!-- <h3 class="day-title">Otvárací deň</h3> -->
-                </div>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">9:00</div>
-                        <div class="event-title">Registrácia</div>
-                        <div class="event-description"></div>
+                    <div class="day-header">
+                        <p class="day-date">Piatok, 14. August 2026</p>
+                        <!-- <h3 class="day-title">Otvárací deň</h3> -->
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">11:30</div>
-                        <div class="event-title">Otvorenie festivalu</div>
-                        <div class="event-description"></div>
-                        <div class="event-speaker"></div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">9:00</div>
+                            <div class="event-title">Registrácia</div>
+                            <div class="event-description"></div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">11:30</div>
+                            <div class="event-title">Otvorenie festivalu</div>
+                            <div class="event-description"></div>
+                            <div class="event-speaker"></div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">12:15</div>
+                            <div class="event-title">Skupinky</div>
+                            <div class="event-description"></div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">13:00</div>
+                            <div class="event-title">Obed</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">15:00</div>
+                            <div class="event-title">Poobedný program</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">17:30</div>
+                            <div class="event-title">Sv. omša</div>
+                            <div class="event-description"></div>
+                            <div class="event-speaker"></div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">18:30</div>
+                            <div class="event-title">Večera</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">20:00</div>
+                            <div class="event-title">Cesta svetla</div>
+                        </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">12:15</div>
-                        <div class="event-title">Skupinky</div>
-                        <div class="event-description"></div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">13:00</div>
-                        <div class="event-title">Obed</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">15:00</div>
-                        <div class="event-title">Poobedný program</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">17:30</div>
-                        <div class="event-title">Sv. omša</div>
-                        <div class="event-description"></div>
-                        <div class="event-speaker"></div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">18:30</div>
-                        <div class="event-title">Večera</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">20:00</div>
-                        <div class="event-title">Cesta svetla</div>
-                    </div>
-                </div>
                 </div>
 
                 <div class="program-day" id="day-1" role="tabpanel" aria-labelledby="day-1-tab">
-                <div class="day-header">
-                    <p class="day-date">Sobota, 15. August 2026</p>
-                    <!-- <h3 class="day-title">ON PRVÝ MILOVAL – SKUTOČNOSŤ</h3> -->
-                </div>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">7:45</div>
-                        <div class="event-title">Ranná modlitba</div>
+                    <div class="day-header">
+                        <p class="day-date">Sobota, 15. August 2026</p>
+                        <!-- <h3 class="day-title">ON PRVÝ MILOVAL – SKUTOČNOSŤ</h3> -->
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">8:15</div>
-                        <div class="event-title">Raňajky</div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">7:45</div>
+                            <div class="event-title">Ranná modlitba</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">8:15</div>
+                            <div class="event-title">Raňajky</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">9:15</div>
+                            <div class="event-title">Prednáška</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">10:45</div>
+                            <div class="event-title">Skupinky</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">11:45</div>
+                            <div class="event-title">Dialóg s hosťom</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">12:30</div>
+                            <div class="event-title">Obed</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">15:00</div>
+                            <div class="event-title">Poobedie s Ankou</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">17:00</div>
+                            <div class="event-title">Sv. omša</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">18:30</div>
+                            <div class="event-title">Večera</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">20:00</div>
+                            <div class="event-title">Večerný program</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">21:30</div>
+                            <div class="event-title">Večerná modlitba</div>
+                        </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">9:15</div>
-                        <div class="event-title">Prednáška</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">10:45</div>
-                        <div class="event-title">Skupinky</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">11:45</div>
-                        <div class="event-title">Dialóg s hosťom</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">12:30</div>
-                        <div class="event-title">Obed</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">15:00</div>
-                        <div class="event-title">Poobedie s Ankou</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">17:00</div>
-                        <div class="event-title">Sv. omša</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">18:30</div>
-                        <div class="event-title">Večera</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">20:00</div>
-                        <div class="event-title">Večerný program</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">21:30</div>
-                        <div class="event-title">Večerná modlitba</div>
-                    </div>
-                </div>
                 </div>
 
                 <div class="program-day" id="day-2" role="tabpanel" aria-labelledby="day-2-tab">
-                <div class="day-header">
-                    <p class="day-date">Nedeľa, 16. August 2026</p>
-                    <!-- <h3 class="day-title">NEUSTÁLE MILUJE – SKÚSENOSŤ</h3> -->
-                </div>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">7:45</div>
-                        <div class="event-title">Ranná modlitba</div>
+                    <div class="day-header">
+                        <p class="day-date">Nedeľa, 16. August 2026</p>
+                        <!-- <h3 class="day-title">NEUSTÁLE MILUJE – SKÚSENOSŤ</h3> -->
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">8:15</div>
-                        <div class="event-title">Raňajky</div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">7:45</div>
+                            <div class="event-title">Ranná modlitba</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">8:15</div>
+                            <div class="event-title">Raňajky</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">9:15</div>
+                            <div class="event-title">U Pavla</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">11:00</div>
+                            <div class="event-title">Sv. omša</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">12:30</div>
+                            <div class="event-title">Obed</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">15:00</div>
+                            <div class="event-title">Workshopy</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">18:30</div>
+                            <div class="event-title">Večera</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">20:00</div>
+                            <div class="event-title">Večerný program</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">21:30</div>
+                            <div class="event-title">Adorácia</div>
+                        </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">9:15</div>
-                        <div class="event-title">U Pavla</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">11:00</div>
-                        <div class="event-title">Sv. omša</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">12:30</div>
-                        <div class="event-title">Obed</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">15:00</div>
-                        <div class="event-title">Workshopy</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">18:30</div>
-                        <div class="event-title">Večera</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">20:00</div>
-                        <div class="event-title">Večerný program</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">21:30</div>
-                        <div class="event-title">Adorácia</div>
-                    </div>
-                </div>
                 </div>
 
                 <div class="program-day" id="day-3" role="tabpanel" aria-labelledby="day-3-tab">
-                <div class="day-header">
-                    <p class="day-date">Pondelok, 17. August 2026</p>
-                    <!-- <h3 class="day-title">MY MILUJEME, LEBO... – ODPOVEĎ</h3> -->
-                    <!-- <h3 class="day-title">Záverečný deň</h3> -->
-                </div>
-                <div class="timeline">
- <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">7:45</div>
-                        <div class="event-title">Ranná modlitba</div>
+                    <div class="day-header">
+                        <p class="day-date">Pondelok, 17. August 2026</p>
+                        <!-- <h3 class="day-title">MY MILUJEME, LEBO... – ODPOVEĎ</h3> -->
+                        <!-- <h3 class="day-title">Záverečný deň</h3> -->
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">8:15</div>
-                        <div class="event-title">Raňajky</div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">7:45</div>
+                            <div class="event-title">Ranná modlitba</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">8:15</div>
+                            <div class="event-title">Raňajky</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">9:00</div>
+                            <div class="event-title">Spätná väzba</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">9:15</div>
+                            <div class="event-title">Sv. omša</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="event-time">11:00</div>
+                            <div class="event-title">Odchod autobusu do MI</div>
+                        </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">9:00</div>
-                        <div class="event-title">Spätná väzba</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">9:15</div>
-                        <div class="event-title">Sv. omša</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="event-time">11:00</div>
-                        <div class="event-title">Odchod autobusu do MI</div>
-                    </div>
-                </div>
                 </div>
 
             </div>
@@ -481,13 +512,15 @@
                     <img src="img/ticket-dobrovolnik.png" alt="Dobrovoľník na festivale" class="ticket-image">
                 </div>
                 <div class="ticket-content">
-                    <p class="ticket-description">Všetky naše akcie sú postavené na nezištnej službe druhým. Pridaj sa aj ty do našej dobrovoľníckej rodiny.</p>
+                    <p class="ticket-description">Všetky naše akcie sú postavené na nezištnej službe druhým. Pridaj sa
+                        aj ty do našej dobrovoľníckej rodiny.</p>
                     <p class="ticket-perks">Dobrovoľník na festivale od 17 rokov.</p>
                     <p class="ticket-perks">Grátis dúchovná obnova pred festivalom a to od utorka do štvrtka</p>
                     <p class="ticket-perks">Možnosť uplatniť študentskú alebo ZKSM zľavu.</p>
 
                     <!-- <a target="_blank" rel="noopener noreferrer" class="btn btn-primary ticket-button disabled-button">Prihlasovanie ukončené</a> -->
-                    <a href="https://forms.gle/Fwc5pBzBfKHQZfRi7" target="_blank" rel="noopener noreferrer" class="btn btn-primary ticket-button">Prihlásiť sa</a>
+                    <a href="https://forms.gle/Fwc5pBzBfKHQZfRi7" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-primary ticket-button">Prihlásiť sa</a>
                 </div>
             </div>
 
@@ -499,12 +532,14 @@
                     <img src="img/ticket-ucastnik.png" alt="Účastník festivalu" class="ticket-image">
                 </div>
                 <div class="ticket-content">
-                    <p class="ticket-description">Festival od štvrtku do pondelka v super spoločenstve, radosti a s krásnymi zážitkami.</p>
+                    <p class="ticket-description">Festival od štvrtku do pondelka v super spoločenstve, radosti a s
+                        krásnymi zážitkami.</p>
                     <p class="ticket-perks">Účastník festivalu od 15 do 35 rokov.</p>
                     <p class="ticket-perks">Možnosť uplatniť študentskú alebo ZKSM zľavu.</p>
 
                     <!-- <a target="_blank" rel="noopener noreferrer" class="btn btn-primary ticket-button disabled-button">Prihlasovanie ukončené</a> -->
-                    <a href="https://forms.gle/Fwc5pBzBfKHQZfRi7" target="_blank" rel="noopener noreferrer" class="btn btn-primary ticket-button">Prihlásiť sa</a>
+                    <a href="https://forms.gle/Fwc5pBzBfKHQZfRi7" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-primary ticket-button">Prihlásiť sa</a>
                 </div>
             </div>
 
@@ -525,7 +560,7 @@
         </div>
     </section>
 
-    
+
 
     <!-- <section id="podporte-nas" class="section">
         <div class="section-header">
@@ -636,9 +671,9 @@
             </div>
         </div>
     </section> -->
-   
 
-    
+
+
 
     <section id="sponsors" class="section">
         <div class="section-header">
@@ -675,7 +710,7 @@
             </div>
         </div>
     </section>
-   
+
 
     <!-- FAQ Section -->
     <section id="faq" class="section">
@@ -690,7 +725,8 @@
                         <span class="faq-icon" aria-hidden="true"></span>
                     </button>
                     <div id="faq1-answer" class="faq-answer" role="region">
-                        <p>Na Festival radosti pozývame mladých od 15 – 35 rokov. Ak ešte nemáš 18 rokov, je potrebné nám po registrácii zaslať Potvrdenie rodiča, resp. právneho zástupcu.</p>
+                        <p>Na Festival radosti pozývame mladých od 15 – 35 rokov. Ak ešte nemáš 18 rokov, je potrebné
+                            nám po registrácii zaslať Potvrdenie rodiča, resp. právneho zástupcu.</p>
                     </div>
                 </li>
                 <li>
@@ -713,20 +749,24 @@
                 </li>
                 <li>
                     <button class="faq-question" aria-expanded="false" aria-controls="faq4-answer">
-                        <span class="faq-question-text">Čo robiť, ak som sa zaregistroval, ale Festivalu radosti sa nakoniec nemôžem zúčastniť?</span>
+                        <span class="faq-question-text">Čo robiť, ak som sa zaregistroval, ale Festivalu radosti sa
+                            nakoniec nemôžem zúčastniť?</span>
                         <span class="faq-icon" aria-hidden="true"></span>
                     </button>
                     <div id="faq4-answer" class="faq-answer" role="region">
-                        <p>Ak sa po registrácii nemôžeš Festivalu radosti zúčastniť, napíš nám na pute@domcek.org, alebo nám napíš do správy na FB alebo IG.</p>
+                        <p>Ak sa po registrácii nemôžeš Festivalu radosti zúčastniť, napíš nám na pute@domcek.org, alebo
+                            nám napíš do správy na FB alebo IG.</p>
                     </div>
                 </li>
                 <li>
                     <button class="faq-question" aria-expanded="false" aria-controls="faq5-answer">
-                        <span class="faq-question-text">Za akých podmienok môžem pomôcť na Festivale radosti ako dobrovoľník?</span>
+                        <span class="faq-question-text">Za akých podmienok môžem pomôcť na Festivale radosti ako
+                            dobrovoľník?</span>
                         <span class="faq-icon" aria-hidden="true"></span>
                     </button>
                     <div id="faq5-answer" class="faq-answer" role="region">
-                        <p>Ak máš minimálne 17 rokov a bol si účastníkom na minimálne 1 púti organizovaných Domčekom, určite ťa pozývame do služby.</p>
+                        <p>Ak máš minimálne 17 rokov a bol si účastníkom na minimálne 1 púti organizovaných Domčekom,
+                            určite ťa pozývame do služby.</p>
                     </div>
                 </li>
                 <li>
@@ -735,7 +775,8 @@
                         <span class="faq-icon" aria-hidden="true"></span>
                     </button>
                     <div id="faq6-answer" class="faq-answer" role="region">
-                        <p>Na Festivale radosti bude samozrejme strava zabezpečená a to od piatka obeda. Ak máš nejakú diétu, napíš nám to do poznámky pri registrácii.</p>
+                        <p>Na Festivale radosti bude samozrejme strava zabezpečená a to od piatka obeda. Ak máš nejakú
+                            diétu, napíš nám to do poznámky pri registrácii.</p>
                     </div>
                 </li>
                 <li>
@@ -753,7 +794,9 @@
                         <span class="faq-icon" aria-hidden="true"></span>
                     </button>
                     <div id="faq8-new-answer" class="faq-answer" role="region">
-                        <p>Spacák, prezuvky, hygienické a osobné potreby, lieky. Zvlášť zdôrazňujeme, aby si si nezabudol(a) priniesť vlastnú fľašu na vodu, pokrývku hlavy, repelent a opaľovací krém pre bezpečné a pokojné prežitie týchto horúcich dní.</p>
+                        <p>Spacák, prezuvky, hygienické a osobné potreby, lieky. Zvlášť zdôrazňujeme, aby si si
+                            nezabudol(a) priniesť vlastnú fľašu na vodu, pokrývku hlavy, repelent a opaľovací krém pre
+                            bezpečné a pokojné prežitie týchto horúcich dní.</p>
                     </div>
                 </li>
                 <li>
@@ -762,16 +805,19 @@
                         <span class="faq-icon" aria-hidden="true"></span>
                     </button>
                     <div id="faq9-answer" class="faq-answer" role="region">
-                        <p>Po registrácii dostaneš prístup k zdieľanej tabuľke, kde môžeš odvoz zabezpečiť sebe, alebo odvoz môžeš ponúknuť práve ty.</p>
+                        <p>Po registrácii dostaneš prístup k zdieľanej tabuľke, kde môžeš odvoz zabezpečiť sebe, alebo
+                            odvoz môžeš ponúknuť práve ty.</p>
                     </div>
                 </li>
                 <li>
                     <button class="faq-question" aria-expanded="false" aria-controls="faq10-answer">
-                        <span class="faq-question-text">Bude po skončení programu zabezpečený odvoz do Michaloviec?</span>
+                        <span class="faq-question-text">Bude po skončení programu zabezpečený odvoz do
+                            Michaloviec?</span>
                         <span class="faq-icon" aria-hidden="true"></span>
                     </button>
                     <div id="faq10-answer" class="faq-answer" role="region">
-                        <p>V pondelok po skončení programu bude v prípade dostatočného záujmu zabezpečený odvoz do Michaloviec autobusom o 11:00 hod (príplatok 2€).</p>
+                        <p>V pondelok po skončení programu bude v prípade dostatočného záujmu zabezpečený odvoz do
+                            Michaloviec autobusom o 11:00 hod (príplatok 2€).</p>
                     </div>
                 </li>
                 <li>
@@ -780,7 +826,8 @@
                         <span class="faq-icon" aria-hidden="true"></span>
                     </button>
                     <div id="faq11-answer" class="faq-answer" role="region">
-                        <p>Ak si sa nedozvedel odpovede na tvoje otázky v tejto sekcii, neváhaj nás kontaktovať na pute@domcek.org, alebo nám napíš do správy na FB alebo IG.</p>
+                        <p>Ak si sa nedozvedel odpovede na tvoje otázky v tejto sekcii, neváhaj nás kontaktovať na
+                            pute@domcek.org, alebo nám napíš do správy na FB alebo IG.</p>
                     </div>
                 </li>
             </ul>
@@ -811,13 +858,16 @@
             <div class="kontakt-social">
                 <h3>Sledujte nás</h3>
                 <div class="social-icons">
-                    <a href="https://www.facebook.com/domankykolesarovej/" target="_blank" rel="noopener noreferrer" aria-label="Dom Anky Kolesárovej na Facebooku">
+                    <a href="https://www.facebook.com/domankykolesarovej/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Dom Anky Kolesárovej na Facebooku">
                         <img src="img/social/fb.svg" alt="Facebook">
                     </a>
-                    <a href="https://www.instagram.com/ankin_domcek/" target="_blank" rel="noopener noreferrer" aria-label="Ankin Domček na Instagrame">
+                    <a href="https://www.instagram.com/ankin_domcek/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Ankin Domček na Instagrame">
                         <img src="img/social/ig.svg" alt="Instagram">
                     </a>
-                    <a href="https://www.youtube.com/@ankin_domcek" target="_blank" rel="noopener noreferrer" aria-label="Ankin Domček na YouTube">
+                    <a href="https://www.youtube.com/@ankin_domcek" target="_blank" rel="noopener noreferrer"
+                        aria-label="Ankin Domček na YouTube">
                         <img src="img/social/yt.svg" alt="YouTube">
                     </a>
                 </div>
@@ -835,7 +885,8 @@
             </div>
             <div class="footer-column footer-links-copyright">
                 <p><a href="https://domcek.org" target="_blank" rel="noopener noreferrer">www.domcek.org</a></p>
-                <p><a href="https://annakolesarova.sk/" target="_blank" rel="noopener noreferrer">www.annakolesarova.sk</a></p>
+                <p><a href="https://annakolesarova.sk/" target="_blank"
+                        rel="noopener noreferrer">www.annakolesarova.sk</a></p>
                 <p>Všetky práva vyhradené &copy; <span id="currentYear"></span></p>
             </div>
             <div class="footer-column footer-logo-domcek">
@@ -848,4 +899,5 @@
 
     <script src="js/script.js"></script>
 </body>
+
 </html>
