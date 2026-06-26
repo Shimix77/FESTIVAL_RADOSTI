@@ -1,7 +1,10 @@
 :root {
-  --primary-gradient: linear-gradient(135deg, #FF4E50 0%, #F9D423 100%); /* Passionate Coral/Red to Sunny Yellow - "Burning Love & Light" */
-  --secondary-gradient: linear-gradient(135deg, #FFC837 0%, #FF8008 100%); /* Gold to Rich Orange - "Divine Warmth & Joy" */
-  --accent-gradient: linear-gradient(135deg, #FFAA4C 0%, #FF773D 100%); /* Bright Peach to Deep Orange - "Inviting Energy" */
+  --primary-gradient: linear-gradient(135deg, #FF4E50 0%, #F9D423 100%);
+  /* Passionate Coral/Red to Sunny Yellow - "Burning Love & Light" */
+  --secondary-gradient: linear-gradient(135deg, #FFC837 0%, #FF8008 100%);
+  /* Gold to Rich Orange - "Divine Warmth & Joy" */
+  --accent-gradient: linear-gradient(135deg, #FFAA4C 0%, #FF773D 100%);
+  /* Bright Peach to Deep Orange - "Inviting Energy" */
 
   /* Light Theme Palette Definitions */
   --light-theme-bg: #FFFFFF;
@@ -9,8 +12,10 @@
   --light-theme-text-primary: #212529;
   --light-theme-text-secondary: #6C757D;
   --light-theme-border-color: #DEE2E6;
-  --light-theme-navbar-bg: rgba(255, 255, 255, 0.95); /* Lighter, slightly transparent for blur */
-  --light-theme-navbar-scrolled-bg: rgba(255, 255, 255, 0.85); /* More opaque when scrolled */
+  --light-theme-navbar-bg: rgba(255, 255, 255, 0.95);
+  /* Lighter, slightly transparent for blur */
+  --light-theme-navbar-scrolled-bg: rgba(255, 255, 255, 0.85);
+  /* More opaque when scrolled */
 
   /* Mapping to existing variable names for site-wide light theme application */
   --dark-bg: var(--light-theme-bg);
@@ -49,7 +54,8 @@ body {
 
 .navbar.scrolled {
   background: var(--light-theme-navbar-scrolled-bg);
-  border-bottom-color: var(--light-theme-border-color); /* Use light theme border */
+  border-bottom-color: var(--light-theme-border-color);
+  /* Use light theme border */
 }
 
 .nav-container {
@@ -114,23 +120,30 @@ body {
 
 /* Navigation Item Highlight for Desktop */
 .nav-menu .nav-item-highlight a {
-    background: var(--accent-gradient); /* Using accent gradient for highlight */
-    color: white; /* Text color for contrast on gradient */
-    padding: 8px 15px;
-    border-radius: 20px; /* Pill shape */
-    font-weight: 600; /* Slightly bolder */
-    transition: all 0.3s ease; /* Smooth transition for hover */
+  background: var(--accent-gradient);
+  /* Using accent gradient for highlight */
+  color: white;
+  /* Text color for contrast on gradient */
+  padding: 8px 15px;
+  border-radius: 20px;
+  /* Pill shape */
+  font-weight: 600;
+  /* Slightly bolder */
+  transition: all 0.3s ease;
+  /* Smooth transition for hover */
 }
 
 /* Remove the ::after underscore for the highlighted item */
 .nav-menu .nav-item-highlight a::after {
-    display: none;
+  display: none;
 }
 
 .nav-menu .nav-item-highlight a:hover {
-    /* Consider a slightly different background or shadow on hover if desired */
-    filter: brightness(1.1); /* Example: slightly brighten the gradient */
+  /* Consider a slightly different background or shadow on hover if desired */
+  filter: brightness(1.1);
+  /* Example: slightly brighten the gradient */
 }
+
 /* Mobile Navigation */
 .hamburger {
   display: none;
@@ -151,15 +164,19 @@ body {
 .mobile-menu {
   display: none;
   position: fixed;
-  top: 80px; /* Adjust based on navbar height */
+  top: 80px;
+  /* Adjust based on navbar height */
   left: 0;
   width: 100%;
-  height: calc(100vh - 80px); /* Adjust based on navbar height */
-  background: var(--light-theme-navbar-scrolled-bg); /* Use a more opaque light bg for mobile menu */
+  height: calc(100vh - 80px);
+  /* Adjust based on navbar height */
+  background: var(--light-theme-navbar-scrolled-bg);
+  /* Use a more opaque light bg for mobile menu */
   backdrop-filter: blur(20px);
   padding: 2rem;
   flex-direction: column;
-  gap: 1rem; /* Adjusted gap for mobile menu items */
+  gap: 1rem;
+  /* Adjusted gap for mobile menu items */
   z-index: 999;
 }
 
@@ -182,18 +199,28 @@ body {
 
 /* Navigation Item Highlight for Mobile */
 .mobile-menu a.nav-item-highlight {
-    background: var(--accent-gradient); /* Using accent gradient for highlight */
-    color: white !important; /* Text color, !important to override general mobile link color */
-    padding: 10px 15px;
-    border-radius: 20px; /* Pill shape */
-    font-weight: 600; /* Slightly bolder */
-    display: block; /* Ensure padding and background apply correctly */
-    text-align: center;
-    margin: 10px auto; /* Vertical margin and auto for horizontal centering */
-    width: fit-content; /* Adjust width to content */
-    max-width: 80%; /* Prevent it from being too wide */
-    border-bottom: none; /* Remove default border for highlighted item */
-    transition: all 0.3s ease; /* Smooth transition for hover */
+  background: var(--accent-gradient);
+  /* Using accent gradient for highlight */
+  color: white !important;
+  /* Text color, !important to override general mobile link color */
+  padding: 10px 15px;
+  border-radius: 20px;
+  /* Pill shape */
+  font-weight: 600;
+  /* Slightly bolder */
+  display: block;
+  /* Ensure padding and background apply correctly */
+  text-align: center;
+  margin: 10px auto;
+  /* Vertical margin and auto for horizontal centering */
+  width: fit-content;
+  /* Adjust width to content */
+  max-width: 80%;
+  /* Prevent it from being too wide */
+  border-bottom: none;
+  /* Remove default border for highlighted item */
+  transition: all 0.3s ease;
+  /* Smooth transition for hover */
 }
 
 
@@ -205,10 +232,14 @@ body {
   justify-content: center;
   position: relative;
   overflow: hidden;
-  margin-top: 80px; /* Account for fixed navbar */
-  background-image: url('../img/hero.png'); /* Path relative to css/style.css */
-  background-size: cover; /* Ensure the image covers the entire section */
-  background-position: center center; /* Center the image */
+  margin-top: 80px;
+  /* Account for fixed navbar */
+  background-image: url('../img/hero.png');
+  /* Path relative to css/style.css */
+  background-size: cover;
+  /* Ensure the image covers the entire section */
+  background-position: center center;
+  /* Center the image */
   background-repeat: no-repeat;
 }
 
@@ -217,18 +248,29 @@ body {
 }
 
 .hero::before {
-  content: ''; /* Ensure content property is present for pseudo-elements */
-  position: absolute; /* Ensure position is set for pseudo-elements */
-  top: 0; /* Ensure top is set for pseudo-elements */
+  content: '';
+  /* Ensure content property is present for pseudo-elements */
+  position: absolute;
+  /* Ensure position is set for pseudo-elements */
+  top: 0;
+  /* Ensure top is set for pseudo-elements */
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text readability */
+  background: rgba(0, 0, 0, 0.5);
+  /* Dark overlay for better text readability */
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(1deg); }
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(1deg);
+  }
 }
 
 .hero-content {
@@ -241,26 +283,31 @@ body {
 .hero-badge {
   display: inline-block;
   padding: 0.5rem 1.5rem;
-  background: rgba(255, 255, 255, 0.15); /* Brighter background */
-  border: 1px solid rgba(255, 255, 255, 0.25); /* Brighter border */
+  background: rgba(255, 255, 255, 0.15);
+  /* Brighter background */
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  /* Brighter border */
   border-radius: 50px;
   font-size: 0.9rem;
   font-weight: 500;
   margin-bottom: 2rem;
-  color: #f0f0f0; /* Explicitly light text color for the badge */
+  color: #f0f0f0;
+  /* Explicitly light text color for the badge */
   backdrop-filter: blur(10px);
   animation: fadeInUp 0.8s ease 0.2s both;
 }
 
 .festival-title {
-  font-size: clamp(3rem, 10vw, 8rem);
+  font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: 900;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #ffffff 0%, #E0E0E0 100%); /* Brighter text gradient */
+  background: linear-gradient(135deg, #ffffff 0%, #E0E0E0 100%);
+  /* Brighter text gradient */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   line-height: 1.1;
+  letter-spacing: -0.03em;
   animation: fadeInUp 0.8s ease 0.4s both;
 }
 
@@ -270,19 +317,25 @@ body {
 
 .festival-subtitle {
   font-size: clamp(1.2rem, 4vw, 2rem);
-  color: #f0f0f0; /* Same color as .hero-badge text */
+  color: #f0f0f0;
+  /* Same color as .hero-badge text */
   margin-bottom: 3rem;
   font-weight: 400;
   animation: fadeInUp 0.8s ease 0.6s both;
 }
 
 .festival-scripture {
-  font-size: clamp(0.9rem, 2.5vw, 1.2rem); /* Smaller than subtitle */
-  color: #f0f0f0; /* Same color as .hero-badge and .festival-subtitle text */
-  margin-top: -2.5rem; /* Adjust to pull it closer to the subtitle above */
-  margin-bottom: 3rem; /* Keep original bottom margin for buttons */
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  /* Smaller than subtitle */
+  color: #f0f0f0;
+  /* Same color as .hero-badge and .festival-subtitle text */
+  margin-top: -2.5rem;
+  /* Adjust to pull it closer to the subtitle above */
+  margin-bottom: 3rem;
+  /* Keep original bottom margin for buttons */
   font-weight: 400;
-  animation: fadeInUp 0.8s ease 0.7s both; /* Slightly later animation */
+  animation: fadeInUp 0.8s ease 0.7s both;
+  /* Slightly later animation */
 }
 
 .hero-buttons {
@@ -317,7 +370,7 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   transition: left 0.5s;
 }
 
@@ -333,19 +386,21 @@ body {
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.05); /* More subtle */
+  background: rgba(255, 255, 255, 0.05);
+  /* More subtle */
   color: white;
-  border: 1px solid rgba(255, 255, 255, 0.1); /* More subtle */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* More subtle */
   backdrop-filter: blur(10px);
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
 .btn-primary:hover {
-   /* Adjusted shadow to match new primary gradient colors */
+  /* Adjusted shadow to match new primary gradient colors */
   box-shadow: 0 12px 40px rgba(249, 212, 35, 0.4);
 }
 
@@ -354,11 +409,15 @@ body {
   .nav-container {
     padding: 0 1.5rem;
   }
+
   .nav-menu {
-    gap: 1rem; /* Reduce gap between menu items */
+    gap: 1rem;
+    /* Reduce gap between menu items */
   }
+
   .nav-item a {
-    font-size: 0.8rem; /* Slightly smaller font size */
+    font-size: 0.8rem;
+    /* Slightly smaller font size */
   }
 }
 
@@ -367,17 +426,22 @@ body {
   .nav-container {
     padding: 0 1.5rem;
   }
+
   .nav-menu {
-    gap: 1rem; /* Reduce gap between menu items */
+    gap: 1rem;
+    /* Reduce gap between menu items */
   }
+
   .nav-item a {
-    font-size: 0.4rem; /* Slightly smaller font size */
+    font-size: 0.4rem;
+    /* Slightly smaller font size */
   }
 }
 
 /* Section Styling */
 .section {
-  padding: 2rem 2rem; /* Further reduced top/bottom padding to 2rem */
+  padding: 2rem 2rem;
+  /* Further reduced top/bottom padding to 2rem */
   max-width: 1400px;
   margin: 0 auto;
   position: relative;
@@ -385,7 +449,7 @@ body {
 
 .section-header {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
 }
 
 .section-badge {
@@ -408,6 +472,7 @@ body {
   /* Changed from light gradient to primary text color for readability in light theme */
   color: var(--text-primary);
   line-height: 1.2;
+  text-transform: uppercase;
 }
 
 .section-description {
@@ -456,19 +521,23 @@ body {
   font-size: 1.3rem;
   line-height: 1.8;
   color: var(--text-secondary);
-  text-align: left; /* Align text to the left for better readability */
-  margin-bottom: 2rem; /* Add space between text and video on mobile */
+  text-align: justify;
+  /* Align text to both sides for better formatting */
+  margin-bottom: 2rem;
+  /* Add space between text and video on mobile */
 }
 
 .tema-video {
   position: relative;
   height: 0;
   overflow: hidden;
-  max-width: 315px; /* Match the iframe's original width */
+  max-width: 315px;
+  /* Match the iframe's original width */
   height: 560px;
-  margin: 0 auto; /* Center on mobile */
+  margin: 0 auto;
+  /* Center on mobile */
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .tema-video iframe {
@@ -482,19 +551,25 @@ body {
 
 @media (min-width: 992px) {
   .tema-content {
-    max-width: 1100px; /* Widen container for the side-by-side layout */
+    max-width: 1100px;
+    /* Widen container for the side-by-side layout */
   }
+
   .tema-wrapper {
     display: flex;
     align-items: center;
     gap: 4rem;
   }
+
   .tema-text {
-    flex: 1; /* Allow text to fill available space */
+    flex: 1;
+    /* Allow text to fill available space */
     margin-bottom: 0;
   }
+
   .tema-video {
-    flex: 0 0 315px; /* Set a fixed width for the video on desktop */
+    flex: 0 0 315px;
+    /* Set a fixed width for the video on desktop */
     margin: 0;
   }
 }
@@ -512,10 +587,12 @@ body {
   border: 1px solid var(--border-color);
   border-radius: 20px;
   /* padding: 3rem 2rem; Removed padding, will be on host-content */
-  text-align: left; /* Align text left now that avatar is full width */
+  text-align: left;
+  /* Align text left now that avatar is full width */
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  overflow: hidden; /* Important for the image border-radius */
+  overflow: hidden;
+  /* Important for the image border-radius */
 }
 
 .host-card::before {
@@ -528,7 +605,8 @@ body {
   background: var(--primary-gradient);
   opacity: 0;
   transition: opacity 0.4s ease;
-  z-index: 1; /* Ensure it's below content */
+  z-index: 1;
+  /* Ensure it's below content */
 }
 
 .host-card:hover::before {
@@ -538,8 +616,9 @@ body {
 .host-card:hover {
   transform: translateY(-8px);
   /* Adjusted border color to use accent gradient's first color for hover */
-  border-color: rgba(255, 170, 76, 0.5); /* Example: using --accent-gradient's start color */
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  border-color: rgba(255, 170, 76, 0.5);
+  /* Example: using --accent-gradient's start color */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .host-avatar {
@@ -548,9 +627,12 @@ body {
   overflow: hidden;
   /* margin: 0 0 2rem 0; Removed margin, image is flush with top */
   position: relative;
-  z-index: 2; /* Above the ::before pseudo-element */
-  border-top-left-radius: 20px; /* Matches card */
-  border-top-right-radius: 20px; /* Matches card */
+  z-index: 2;
+  /* Above the ::before pseudo-element */
+  border-top-left-radius: 20px;
+  /* Matches card */
+  border-top-right-radius: 20px;
+  /* Matches card */
 }
 
 .host-avatar img {
@@ -562,8 +644,10 @@ body {
 }
 
 .host-content {
-  padding: 2rem; /* Add padding to the content area below image */
-  position: relative; /* Ensure content is above ::before pseudo-element */
+  padding: 2rem;
+  /* Add padding to the content area below image */
+  position: relative;
+  /* Ensure content is above ::before pseudo-element */
   z-index: 2;
 }
 
@@ -571,7 +655,8 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  color: var(--text-primary); /* Ensure it's primary text color */
+  color: var(--text-primary);
+  /* Ensure it's primary text color */
 }
 
 .host-role {
@@ -589,7 +674,8 @@ body {
 /* Lístky (Tickets) Section */
 .tickets-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly smaller minmax for tickets */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  /* Slightly smaller minmax for tickets */
   gap: 2rem;
   margin-top: 4rem;
 }
@@ -602,11 +688,14 @@ body {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  display: flex; /* For better internal alignment */
-  flex-direction: column; /* Stack header and content vertically */
+  display: flex;
+  /* For better internal alignment */
+  flex-direction: column;
+  /* Stack header and content vertically */
 }
 
-.ticket-card::before { /* Optional: hover effect similar to host-card */
+.ticket-card::before {
+  /* Optional: hover effect similar to host-card */
   content: '';
   position: absolute;
   top: 0;
@@ -625,50 +714,70 @@ body {
 
 .ticket-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(255, 170, 76, 0.5); /* Accent color for hover */
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  border-color: rgba(255, 170, 76, 0.5);
+  /* Accent color for hover */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 /* Styles for the premium (Účastník) ticket card */
 .ticket-card.premium {
-  border: 2px solid #FFAA4C; /* Start color of --accent-gradient for a distinct border */
-  box-shadow: 0 8px 25px rgba(255, 170, 76, 0.25); /* Shadow matching the border's accent color */
+  border: 2px solid #FFAA4C;
+  /* Start color of --accent-gradient for a distinct border */
+  box-shadow: 0 8px 25px rgba(255, 170, 76, 0.25);
+  /* Shadow matching the border's accent color */
 }
 
 .ticket-card.premium:hover {
-  border-color: #FFAA4C; /* Maintain the distinct border color on hover */
-  transform: translateY(-10px); /* Slightly more lift than other cards */
-  box-shadow: 0 12px 35px rgba(255, 170, 76, 0.35); /* Enhanced shadow for premium hover */
+  border-color: #FFAA4C;
+  /* Maintain the distinct border color on hover */
+  transform: translateY(-10px);
+  /* Slightly more lift than other cards */
+  box-shadow: 0 12px 35px rgba(255, 170, 76, 0.35);
+  /* Enhanced shadow for premium hover */
 }
 
 /* Adjust header radius for premium card to account for its border */
 .ticket-card.premium .ticket-header {
-  border-top-left-radius: 18px; /* card-radius - border-width */
-  border-top-right-radius: 18px; /* card-radius - border-width */
+  border-top-left-radius: 18px;
+  /* card-radius - border-width */
+  border-top-right-radius: 18px;
+  /* card-radius - border-width */
 }
 
 .ticket-header {
-  background: var(--primary-gradient); /* Use primary gradient for header */
-  padding: 1.5rem 2rem; /* Ensure z-index is higher than ::before if it exists */
-  border-top-left-radius: 20px; /* Match card radius */
-  border-top-right-radius: 20px; /* Match card radius */
+  background: var(--primary-gradient);
+  /* Use primary gradient for header */
+  padding: 1.5rem 2rem;
+  /* Ensure z-index is higher than ::before if it exists */
+  border-top-left-radius: 20px;
+  /* Match card radius */
+  border-top-right-radius: 20px;
+  /* Match card radius */
   position: relative;
   z-index: 1;
 }
+
 .ticket-image-container {
   width: 100%;
-  height: 9.6rem; /* Approximately twice the header height (1.5rem + 1.8rem + 1.5rem) * 2 */
-  overflow: hidden; /* Ensures image doesn't overflow if it's larger than container */
+  height: 9.6rem;
+  /* Approximately twice the header height (1.5rem + 1.8rem + 1.5rem) * 2 */
+  overflow: hidden;
+  /* Ensures image doesn't overflow if it's larger than container */
   /* margin-bottom: 1rem; /* Space between image and ticket content - adjust if needed */
-  position: relative; /* For z-index if needed, and good practice */
-  z-index: 1; /* Same as header and content */
+  position: relative;
+  /* For z-index if needed, and good practice */
+  z-index: 1;
+  /* Same as header and content */
 }
 
 .ticket-image {
   width: 100%;
-  height: 100%; /* Make image fill the container */
-  object-fit: cover; /* Scales the image to maintain aspect ratio while filling the element's entire content box */
-  display: block; /* Removes any extra space below the image */
+  height: 100%;
+  /* Make image fill the container */
+  object-fit: cover;
+  /* Scales the image to maintain aspect ratio while filling the element's entire content box */
+  display: block;
+  /* Removes any extra space below the image */
 }
 
 .ticket-header h3 {
@@ -680,15 +789,18 @@ body {
 
 .ticket-content {
   padding: 2rem;
-  flex-grow: 1; /* Allow content to fill space */
+  flex-grow: 1;
+  /* Allow content to fill space */
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Pushes button to bottom */
+  justify-content: space-between;
+  /* Pushes button to bottom */
   position: relative;
   z-index: 1;
 }
 
-.ticket-description, .ticket-perks {
+.ticket-description,
+.ticket-perks {
   color: var(--text-secondary);
   margin-bottom: 1rem;
   font-size: 0.95rem;
@@ -699,18 +811,22 @@ body {
   font-weight: 800;
   color: var(--text-primary);
   margin-bottom: 1.5rem;
-  background: var(--accent-gradient); /* Price with accent gradient text */
+  background: var(--accent-gradient);
+  /* Price with accent gradient text */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  display: inline-block; /* For background-clip to work well */
+  display: inline-block;
+  /* For background-clip to work well */
 }
 
 .ticket-button {
   width: 100%;
   text-align: center;
-  justify-content: center; /* Center icon and text if using .btn flex properties */
-  margin-top: auto; /* Pushes button to the bottom if content above is short */
+  justify-content: center;
+  /* Center icon and text if using .btn flex properties */
+  margin-top: auto;
+  /* Pushes button to the bottom if content above is short */
 }
 
 /* Program Section */
@@ -739,12 +855,15 @@ body {
   color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.3s ease;
-  font-weight: 500;
+  font-weight: bold;
+  font-size: large;
   position: relative;
   overflow: hidden;
   /* Adjust tab button width for horizontal layout */
-  width: auto; /* Let buttons take their content width */
-  display: inline-block; /* Ensure they line up horizontally */
+  width: auto;
+  /* Let buttons take their content width */
+  display: inline-block;
+  /* Ensure they line up horizontally */
   text-align: center;
 }
 
@@ -756,7 +875,8 @@ body {
 
 .tab-button:hover:not(.active) {
   /* Adjusted border color to use accent gradient's first color for hover */
-  border-color: rgba(255, 170, 76, 0.5); /* Example: using --accent-gradient's start color */
+  border-color: rgba(255, 170, 76, 0.5);
+  /* Example: using --accent-gradient's start color */
   color: var(--text-primary);
 }
 
@@ -804,6 +924,7 @@ body {
 
 .day-date {
   font-size: 1.2rem;
+  font-weight: bold;
   color: var(--text-secondary);
   margin-bottom: 0.25rem;
 }
@@ -826,12 +947,14 @@ body {
 
 .timeline-item {
   position: relative;
-  padding: 1rem 0 1rem 5rem; /* Reduced top/bottom padding */
+  padding: 1rem 0 1rem 5rem;
+  /* Reduced top/bottom padding */
   border-left: 2px solid transparent;
   opacity: 0;
   transform: translateX(-20px);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .timeline-item.visible {
   opacity: 1;
   transform: translateX(0);
@@ -840,8 +963,10 @@ body {
 
 .timeline-dot {
   position: absolute;
-  left: calc(2rem - 6px + 1px); /* (timeline::before left) - (dot width / 2) + (timeline::before width / 2) */
-  top: 1.5rem; /* Adjusted to match reduced padding */
+  left: calc(2rem - 6px + 1px);
+  /* (timeline::before left) - (dot width / 2) + (timeline::before width / 2) */
+  top: 1.5rem;
+  /* Adjusted to match reduced padding */
   width: 12px;
   height: 12px;
   background: var(--primary-gradient);
@@ -850,47 +975,58 @@ body {
 }
 
 .event-time {
-  font-size: 0.85rem; /* Slightly smaller font */
+  font-size: 0.85rem;
+  /* Slightly smaller font */
   color: var(--text-secondary);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 0.25rem; /* Reduced margin */
+  margin-bottom: 0.25rem;
+  /* Reduced margin */
 }
 
 .event-title {
-  font-size: 1.3rem; /* Slightly smaller font */
+  font-size: 1.3rem;
+  /* Slightly smaller font */
   font-weight: 700;
-  margin-bottom: 0.25rem; /* Reduced margin */
+  margin-bottom: 0.25rem;
+  /* Reduced margin */
   color: var(--text-primary);
 }
 
 .event-description {
   color: var(--text-secondary);
-  line-height: 1.5; /* Slightly tighter line height */
-  font-size: 0.9rem; /* Optional: slightly smaller font */
+  line-height: 1.5;
+  /* Slightly tighter line height */
+  font-size: 0.9rem;
+  /* Optional: slightly smaller font */
 }
 
 .event-speaker {
-  font-size: 0.85rem; /* Slightly smaller font */
+  font-size: 0.85rem;
+  /* Slightly smaller font */
   /* Using accent gradient's start color for speaker text */
   color: #FFAA4C;
   font-weight: 500;
-  margin-top: 0.25rem; /* Reduced margin */
+  margin-top: 0.25rem;
+  /* Reduced margin */
 }
 
 /* Styles for donation amount options */
 .donation-amount-options {
   display: flex;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  flex-wrap: wrap;
+  /* Allow wrapping on smaller screens */
   gap: 1rem;
-  margin-bottom: 1.5rem; /* Space before custom input or payment methods */
+  margin-bottom: 1.5rem;
+  /* Space before custom input or payment methods */
 }
 
 .predefined-amount-option {
   display: flex;
   align-items: center;
-  background-color: var(--dark-bg); /* Or var(--dark-card) if you prefer */
+  background-color: var(--dark-bg);
+  /* Or var(--dark-card) if you prefer */
   padding: 0.75rem 1rem;
   border-radius: 8px;
   border: 1px solid var(--border-color);
@@ -899,12 +1035,14 @@ body {
 }
 
 .predefined-amount-option:hover {
-  background-color: rgba(255,255,255,0.05); /* Subtle hover for light theme */
+  background-color: rgba(255, 255, 255, 0.05);
+  /* Subtle hover for light theme */
 }
 
 .predefined-amount-option input[type="radio"] {
   margin-right: 0.75rem;
-  accent-color: #FF4E50; /* Match primary gradient start */
+  accent-color: #FF4E50;
+  /* Match primary gradient start */
 }
 
 .predefined-amount-option label {
@@ -914,7 +1052,10 @@ body {
 }
 
 /* Ensure the custom amount input group has some top margin when visible */
-#customAmountInputGroup { margin-top: 1rem; margin-bottom: 2rem; }
+#customAmountInputGroup {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
 
 /* Donations Section */
 .donations-container {
@@ -929,12 +1070,14 @@ body {
 
 @media (min-width: 992px) {
   .donations-container {
-    grid-template-columns: 1fr 1fr; /* Two columns on larger screens */
+    grid-template-columns: 1fr 1fr;
+    /* Two columns on larger screens */
     gap: 5rem;
   }
 }
 
-.progress-section h3, .donation-form-section h4 {
+.progress-section h3,
+.donation-form-section h4 {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--text-primary);
@@ -949,7 +1092,8 @@ body {
 
 .progress-bar-container {
   position: relative;
-  margin-bottom: 2rem; /* Space for goal markers below */
+  margin-bottom: 2rem;
+  /* Space for goal markers below */
 }
 
 .progress-bar-track {
@@ -969,14 +1113,16 @@ body {
 
 .progress-goals {
   position: relative;
-  height: 30px; /* Height to accommodate pins and text */
+  height: 30px;
+  /* Height to accommodate pins and text */
   margin-top: 0.5rem;
 }
 
 .goal-marker {
   position: absolute;
   bottom: 0;
-  transform: translateX(-50%); /* Center the marker text */
+  transform: translateX(-50%);
+  /* Center the marker text */
   font-size: 0.85rem;
   color: var(--text-secondary);
   text-align: center;
@@ -988,20 +1134,23 @@ body {
   width: 2px;
   height: 10px;
   background-color: var(--text-secondary);
-  margin: 0 auto 4px auto; /* Center pin above text */
+  margin: 0 auto 4px auto;
+  /* Center pin above text */
 }
 
 .amount-input-group {
   display: flex;
   align-items: center;
   margin-bottom: 2rem;
-  background-color: var(--dark-bg); /* Slightly different background for input area */
+  background-color: var(--dark-bg);
+  /* Slightly different background for input area */
   border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 0.5rem;
 }
 
-.amount-input-group label.sr-only { /* For accessibility, if label text is visually hidden */
+.amount-input-group label.sr-only {
+  /* For accessibility, if label text is visually hidden */
   position: absolute;
   width: 1px;
   height: 1px;
@@ -1021,7 +1170,8 @@ body {
   color: var(--text-primary);
   font-size: 1.1rem;
   outline: none;
-  width: calc(100% - 30px); /* Adjust based on currency symbol width */
+  width: calc(100% - 30px);
+  /* Adjust based on currency symbol width */
 }
 
 .amount-input-group input[type="number"]::placeholder {
@@ -1049,7 +1199,8 @@ body {
 
 .payment-option input[type="radio"] {
   margin-right: 0.75rem;
-  accent-color: #FF4E50; /* Match primary gradient start */
+  accent-color: #FF4E50;
+  /* Match primary gradient start */
 }
 
 .payment-option label {
@@ -1061,7 +1212,8 @@ body {
 .payment-details .payment-info {
   display: none;
   padding: 1.5rem;
-  background-color: var(--dark-bg); /* Slightly different background for info area */
+  background-color: var(--dark-bg);
+  /* Slightly different background for info area */
   border: 1px solid var(--border-color);
   border-radius: 8px;
   margin-top: 1rem;
@@ -1084,7 +1236,8 @@ body {
   display: block;
   max-width: 200px;
   margin: 1rem auto 0 auto;
-  border: 5px solid white; /* Simple border for QR */
+  border: 5px solid white;
+  /* Simple border for QR */
   border-radius: 8px;
 }
 
@@ -1097,44 +1250,57 @@ body {
 /* Animations */
 @keyframes fadeInUp {
   from {
-      opacity: 0;
-      transform: translateY(30px);
+    opacity: 0;
+    transform: translateY(30px);
   }
+
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .nav-menu {
-      display: none;
+    display: none;
   }
 
   .hamburger {
-      display: flex;
+    display: flex;
   }
 
   .section {
-      padding: 2rem 1rem; /* Reduced top/bottom padding to 2rem for mobile */
+    padding: 2rem 1rem;
+    /* Reduced top/bottom padding to 2rem for mobile */
   }
 
   .tema {
-      margin: 2rem 1rem;
-      padding: 3rem 1.5rem; /* Reduced padding for a more compact feel */
+    margin: 2rem 1rem;
+    padding: 3rem 1.5rem;
+    /* Reduced padding for a more compact feel */
   }
+
   .tema-text {
-      font-size: 1.1rem; /* Smaller font size on mobile */
-      line-height: 1.6; /* Tighter line height on mobile */
+    font-size: 1.1rem;
+    /* Smaller font size on mobile */
+    line-height: 1.6;
+    /* Tighter line height on mobile */
   }
+
   .tickets-grid {
-    grid-template-columns: 1fr; /* Single column for tickets on mobile */
+    grid-template-columns: 1fr;
+    /* Single column for tickets on mobile */
   }
 
   .tickets-grid .ticket-card.premium {
@@ -1148,51 +1314,68 @@ body {
   .tickets-grid .ticket-card:nth-child(3) {
     order: 3;
   }
-  .ticket-header h3 { font-size: 1.5rem; }
-  .ticket-price { font-size: 2rem; }
+
+  .ticket-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .ticket-price {
+    font-size: 2rem;
+  }
 
   .hostia-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
+
   .host-avatar {
-      height: 200px; /* Slightly smaller image height on mobile */
+    height: 200px;
+    /* Slightly smaller image height on mobile */
   }
+
   .host-content {
-      padding: 1.5rem; /* Adjust padding for mobile */
+    padding: 1.5rem;
+    /* Adjust padding for mobile */
   }
 
   .hero-buttons {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .btn {
-      width: 100%;
-      max-width: 300px;
-      justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
   }
 
   .program-tabs {
-      /* Allow horizontal scrolling for tabs */
-      overflow-x: auto;
-      justify-content: center; /* Align tabs to the center */
-      padding-bottom: 10px; /* Add some space for the scrollbar if it appears */
-      -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
+    /* Allow horizontal scrolling for tabs */
+    overflow-x: auto;
+    justify-content: center;
+    /* Align tabs to the center */
+    padding-bottom: 10px;
+    /* Add some space for the scrollbar if it appears */
+    -webkit-overflow-scrolling: touch;
+    /* Smoother scrolling on iOS */
   }
 
   .timeline::before {
-      left: 1rem;
+    left: 1rem;
   }
+
   .timeline-item {
-      padding-left: 2.5rem; /* Reduced left padding on mobile */
+    padding-left: 2.5rem;
+    /* Reduced left padding on mobile */
   }
+
   .event-title {
-      font-size: 1.2rem; /* Adjust title font on mobile if needed */
+    font-size: 1.2rem;
+    /* Adjust title font on mobile if needed */
   }
 
   .timeline-dot {
-      left: calc(1rem - 6px + 1px);
+    left: calc(1rem - 6px + 1px);
   }
 }
 
@@ -1215,9 +1398,11 @@ html {
 
 /* FAQ Section Styles */
 .faq-container {
-  max-width: 800px; /* Adjust as needed */
+  max-width: 800px;
+  /* Adjust as needed */
   margin: 0 auto;
-  padding: 0 1rem; /* Add some padding on smaller screens */
+  padding: 0 1rem;
+  /* Add some padding on smaller screens */
 }
 
 .faq-list {
@@ -1241,7 +1426,8 @@ html {
   width: 100%;
   padding: 1.5rem 0;
   text-align: left;
-  font-size: 1.1rem; /* Adjust as needed */
+  font-size: 1.1rem;
+  /* Adjust as needed */
   font-weight: 600;
   color: var(--text-primary);
   background-color: transparent;
@@ -1249,16 +1435,20 @@ html {
   cursor: pointer;
   transition: color 0.3s ease;
 }
+
 .faq-question-text {
-  flex-grow: 1; /* Allows text to take up available space */
-  margin-right: 1rem; /* Space between text and icon */
+  flex-grow: 1;
+  /* Allows text to take up available space */
+  margin-right: 1rem;
+  /* Space between text and icon */
   /* Optional: helps with very long words on small screens if they cause overflow */
   /* word-break: break-word; */
 }
 
 .faq-question:hover,
 .faq-question:focus {
-  color: #FF4E50; /* Use a solid color from your primary gradient for hover */
+  color: #FF4E50;
+  /* Use a solid color from your primary gradient for hover */
   /* If using a text gradient, this won't work directly.
      You might need to apply the gradient to a span inside the button.
      For simplicity, a solid color hover is used here. */
@@ -1266,69 +1456,91 @@ html {
 
 .faq-question:hover .faq-question-text,
 .faq-question:focus .faq-question-text {
-  color: #FF4E50; /* Ensure text within the span also gets hover color */
+  color: #FF4E50;
+  /* Ensure text within the span also gets hover color */
 }
+
 /* Fallback for when .faq-question-text is not used, though less ideal for layout */
 .faq-question:hover,
 .faq-question:focus {
-   color: #FF4E50;
+  color: #FF4E50;
 }
 
 .faq-icon {
   display: inline-block;
-  width: 20px; /* Adjust size */
-  height: 20px; /* Adjust size */
+  width: 20px;
+  /* Adjust size */
+  height: 20px;
+  /* Adjust size */
   margin-left: 1rem;
   /* transition: transform 0.3s ease; /* If you want the whole icon to rotate on expand */
   position: relative;
-  flex-shrink: 0; /* Prevents icon from shrinking */
+  flex-shrink: 0;
+  /* Prevents icon from shrinking */
 }
 
 .faq-icon::before,
 .faq-icon::after {
   content: '';
   position: absolute;
-  background-color: var(--text-primary); /* Icon color */
+  background-color: var(--text-primary);
+  /* Icon color */
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
 .faq-question:hover .faq-icon::before,
 .faq-question:hover .faq-icon::after,
 .faq-question:focus .faq-icon::before,
 .faq-question:focus .faq-icon::after {
-   background-color: #FF4E50; /* Match text hover color */
+  background-color: #FF4E50;
+  /* Match text hover color */
 }
 
 /* Plus icon */
-.faq-icon::before { /* Horizontal bar */
+.faq-icon::before {
+  /* Horizontal bar */
   top: 50%;
-  left: 2px; /* Adjust for centering */
-  width: 16px; /* Bar length */
-  height: 2px; /* Bar thickness */
+  left: 2px;
+  /* Adjust for centering */
+  width: 16px;
+  /* Bar length */
+  height: 2px;
+  /* Bar thickness */
   transform: translateY(-50%);
 }
-.faq-icon::after { /* Vertical bar */
-  top: 2px; /* Adjust for centering */
+
+.faq-icon::after {
+  /* Vertical bar */
+  top: 2px;
+  /* Adjust for centering */
   left: 50%;
-  width: 2px; /* Bar thickness */
-  height: 16px; /* Bar length */
+  width: 2px;
+  /* Bar thickness */
+  height: 16px;
+  /* Bar length */
   transform: translateX(-50%);
 }
 
 /* Minus icon when expanded */
 .faq-question[aria-expanded="true"] .faq-icon::after {
-  transform: translateX(-50%) rotate(90deg); /* Hide vertical bar by rotating it */
+  transform: translateX(-50%) rotate(90deg);
+  /* Hide vertical bar by rotating it */
 }
 
 .faq-answer {
-  padding-left: 0; /* Assuming no horizontal padding needed directly on the answer div */
+  padding-left: 0;
+  /* Assuming no horizontal padding needed directly on the answer div */
   padding-right: 0;
-  padding-top: 0; /* Ensure no top padding initially */
-  padding-bottom: 0; /* Ensure no bottom padding initially */
+  padding-top: 0;
+  /* Ensure no top padding initially */
+  padding-bottom: 0;
+  /* Ensure no bottom padding initially */
   color: var(--text-secondary);
   line-height: 1.6;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease-out, padding-top 0.4s ease-out, padding-bottom 0.4s ease-out; /* Specific padding transitions */
+  transition: max-height 0.4s ease-out, padding-top 0.4s ease-out, padding-bottom 0.4s ease-out;
+  /* Specific padding transitions */
 }
 
 .faq-answer p {
@@ -1342,294 +1554,372 @@ html {
 
 /* Sponsors Section */
 .sponsors-container {
-    max-width: 1000px; /* Adjust as needed */
-    margin: 0 auto;
-    padding: 0 1rem;
+  max-width: 1000px;
+  /* Adjust as needed */
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .sponsors-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Or space-around, space-between */
-    align-items: center;
-    gap: 2rem; /* Space between logos */
-    margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* Or space-around, space-between */
+  align-items: center;
+  gap: 2rem;
+  /* Space between logos */
+  margin-top: 2rem;
 }
 
 .sponsor-logo {
-    flex-basis: calc(50% - 1rem); /* Two logos per row on smaller screens, accounting for gap */
-    max-width: 180px; /* Max width for a logo, adjust as needed */
-    text-align: center; /* Center the image if its container is wider */
+  flex-basis: calc(50% - 1rem);
+  /* Two logos per row on smaller screens, accounting for gap */
+  max-width: 180px;
+  /* Max width for a logo, adjust as needed */
+  text-align: center;
+  /* Center the image if its container is wider */
 }
 
 .sponsor-logo img {
-    max-width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    max-height: 80px; /* Max height for a logo, adjust as needed */
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
+  max-width: 100%;
+  height: auto;
+  /* Maintain aspect ratio */
+  max-height: 80px;
+  /* Max height for a logo, adjust as needed */
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
 }
 
 .sponsor-logo a:hover img,
 .sponsor-logo a:focus img {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* Responsive adjustments for more logos per row on larger screens */
 @media (min-width: 768px) {
-    .sponsor-logo {
-        flex-basis: calc(25% - 1.5rem); /* Four logos per row, accounting for gap */
-    }
+  .sponsor-logo {
+    flex-basis: calc(25% - 1.5rem);
+    /* Four logos per row, accounting for gap */
+  }
 }
 
 @media (min-width: 992px) {
-    .sponsor-logo {
-        flex-basis: calc(20% - 1.6rem); /* Five logos per row, accounting for gap */
-    }
+  .sponsor-logo {
+    flex-basis: calc(20% - 1.6rem);
+    /* Five logos per row, accounting for gap */
+  }
 }
 
 /* Kontakt Section */
 .kontakt-container {
-    max-width: 800px; /* Adjust as needed */
-    margin: 2rem auto 0;
-    padding: 0 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+  max-width: 800px;
+  /* Adjust as needed */
+  margin: 2rem auto 0;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
 
 .kontakt-details {
-    display: grid;
-    grid-template-columns: 1fr; /* Single column on small screens */
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  /* Single column on small screens */
+  gap: 2rem;
 }
 
 .kontakt-item h3 {
-    font-size: 1.25rem;
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-    font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 .kontakt-item p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--text-secondary);
-    margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
 }
 
 .kontakt-item p a {
-    color: var(--primary-gradient); /* Or your link color */
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: var(--primary-gradient);
+  /* Or your link color */
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .kontakt-item p a:hover,
 .kontakt-item p a:focus {
-    color: var(--accent-gradient); /* Or your link hover color */
-    text-decoration: underline;
+  color: var(--accent-gradient);
+  /* Or your link hover color */
+  text-decoration: underline;
 }
 
 .kontakt-social {
-    text-align: center;
+  text-align: center;
 }
 
 .kontakt-social h3 {
-    font-size: 1.25rem;
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-    font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem; /* Space between icons */
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  /* Space between icons */
 }
 
 .social-icons a img {
-    width: 32px; /* Adjust icon size as needed */
-    height: 32px;
-    opacity: 0.8;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+  width: 32px;
+  /* Adjust icon size as needed */
+  height: 32px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .social-icons a:hover img,
 .social-icons a:focus img {
-    opacity: 1;
-    transform: translateY(-2px); /* Slight lift on hover */
+  opacity: 1;
+  transform: translateY(-2px);
+  /* Slight lift on hover */
 }
 
 /* Responsive adjustments for contact details layout */
 @media (min-width: 768px) {
-    .kontakt-container {
-        flex-direction: row; /* Side-by-side layout on larger screens */
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-    .kontakt-details {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* More flexible grid */
-        flex-basis: 65%; /* Give more space to details */
-        text-align: left;
-    }
-    .kontakt-social {
-        flex-basis: 30%; /* Space for social links */
-        text-align: left; /* Align social section content to the left */
-    }
-    .social-icons {
-        justify-content: flex-start; /* Align icons to the start on larger screens */
-    }
+  .kontakt-container {
+    flex-direction: row;
+    /* Side-by-side layout on larger screens */
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .kontakt-details {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* More flexible grid */
+    flex-basis: 65%;
+    /* Give more space to details */
+    text-align: left;
+  }
+
+  .kontakt-social {
+    flex-basis: 30%;
+    /* Space for social links */
+    text-align: left;
+    /* Align social section content to the left */
+  }
+
+  .social-icons {
+    justify-content: flex-start;
+    /* Align icons to the start on larger screens */
+  }
 }
+
 /* New Footer Section Styles */
 .site-footer {
-    background-color: var(--footer-bg-color, #212529); /* Dark background, similar to --light-theme-text-primary */
-    color: var(--footer-text-color, #f8f9fa); /* Light text color for contrast */
-    padding: 2rem 0;
-    font-size: 0.9rem;
-    border-top: 1px solid var(--border-color, #e0e0e0);
-    max-width: none; /* Override max-width from .section class for full-width background */
+  background-color: var(--footer-bg-color, #212529);
+  /* Dark background, similar to --light-theme-text-primary */
+  color: var(--footer-text-color, #f8f9fa);
+  /* Light text color for contrast */
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border-color, #e0e0e0);
+  max-width: none;
+  /* Override max-width from .section class for full-width background */
 }
 
 .footer-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .footer-column {
-    flex: 1;
-    min-width: 200px; /* Ensure columns don't get too squished */
-    text-align: center;
+  flex: 1;
+  min-width: 200px;
+  /* Ensure columns don't get too squished */
+  text-align: center;
 }
 
 .footer-logo-anka img,
 .footer-logo-domcek img {
-    display: block;
-    margin: 0 auto; /* Center logos within their columns */
-    max-width: 100%; /* Ensure logos are responsive */
-    height: auto; /* Maintain aspect ratio */
+  display: block;
+  margin: 0 auto;
+  /* Center logos within their columns */
+  max-width: 100%;
+  /* Ensure logos are responsive */
+  height: auto;
+  /* Maintain aspect ratio */
 }
 
 .footer-logo-anka img {
-    max-height: 80px; /* Adjust as needed */
+  max-height: 80px;
+  /* Adjust as needed */
 }
 
 .footer-logo-domcek img {
-    max-height: 40px; /* Adjust as needed */
-    padding-top: 5px; /* As per example style */
+  max-height: 40px;
+  /* Adjust as needed */
+  padding-top: 5px;
+  /* As per example style */
 }
 
 .footer-links-copyright p {
-    margin: 0.5rem 0;
-    font-size: 0.9rem;
-    color: var(--footer-secondary-text-color, #adb5bd); /* Lighter secondary text */
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: var(--footer-secondary-text-color, #adb5bd);
+  /* Lighter secondary text */
 }
 
 .footer-links-copyright a {
-    color: var(--footer-link-color, #dee2e6); /* Light link color */
-    text-decoration: none;
+  color: var(--footer-link-color, #dee2e6);
+  /* Light link color */
+  text-decoration: none;
 }
 
 .footer-links-copyright a:hover {
-    text-decoration: underline;
-    color: var(--footer-link-hover-color, #ffffff); /* Brighter link color on hover */
+  text-decoration: underline;
+  color: var(--footer-link-hover-color, #ffffff);
+  /* Brighter link color on hover */
 }
 
 /* Responsive adjustments for footer columns */
 @media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-    .footer-column {
-        width: 100%; /* Full width for columns on smaller screens */
-        margin-bottom: 1rem;
-    }
-    .footer-logo-anka, .footer-logo-domcek {
-        order: -1; /* Optionally move logos to top on mobile if desired */
-    }
-    .footer-links-copyright {
-        order: 0; /* Ensure links/copyright are in the middle */
-    }
+  .hero-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer-column {
+    width: 100%;
+    /* Full width for columns on smaller screens */
+    margin-bottom: 1rem;
+  }
+
+  .footer-logo-anka,
+  .footer-logo-domcek {
+    order: -1;
+    /* Optionally move logos to top on mobile if desired */
+  }
+
+  .footer-links-copyright {
+    order: 0;
+    /* Ensure links/copyright are in the middle */
+  }
 }
+
 /* Small Photo Gallery Styling */
 .gallery-wrapper {
-    max-width: 900px; /* Adjust as needed */
-    margin: 3rem auto 0 auto; /* Centered with top margin, adjust as needed */
-    padding: 0 1rem; /* Consistent horizontal padding */
+  max-width: 900px;
+  /* Adjust as needed */
+  margin: 3rem auto 0 auto;
+  /* Centered with top margin, adjust as needed */
+  padding: 0 1rem;
+  /* Consistent horizontal padding */
 }
 
 .gallery-title {
-    text-align: center;
-    font-size: 1.5rem; /* Adjust as needed */
-    color: var(--text-primary);
-    margin-bottom: 2rem;
-    font-weight: 600;
+  text-align: center;
+  font-size: 1.5rem;
+  /* Adjust as needed */
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  font-weight: 600;
 }
 
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-    gap: 1rem; /* Space between images */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /* Responsive grid */
+  gap: 1rem;
+  /* Space between images */
 }
 
 .gallery-item {
-    width: 100%;
-    border-radius: 12px; /* Optional: match card styling */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
-    overflow: hidden; /* Ensures image respects border-radius */
+  width: 100%;
+  border-radius: 12px;
+  /* Optional: match card styling */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  /* Optional: subtle shadow */
+  overflow: hidden;
+  /* Ensures image respects border-radius */
 }
 
 .gallery-item img {
-    width: 100%;
-    height: 200px; /* Fixed height for consistency, adjust as needed */
-    object-fit: cover; /* Crop images to fit, maintaining aspect ratio */
-    display: block; /* Remove extra space below image */
-    transition: transform 0.3s ease;
+  width: 100%;
+  height: 200px;
+  /* Fixed height for consistency, adjust as needed */
+  object-fit: cover;
+  /* Crop images to fit, maintaining aspect ratio */
+  display: block;
+  /* Remove extra space below image */
+  transition: transform 0.3s ease;
 }
 
 .gallery-item img:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
+  transform: scale(1.05);
+  /* Slight zoom on hover */
 }
 
 /* Styles for disabled button */
 .disabled-button {
-    background: #ccc !important; /* Grey background, !important to override gradient */
-    color: #666 !important;      /* Darker grey text */
-    cursor: not-allowed !important; /* Show 'not-allowed' cursor */
-    box-shadow: none !important;    /* Remove any box shadow */
-    opacity: 0.6;                 /* Make it slightly transparent */
+  background: #ccc !important;
+  /* Grey background, !important to override gradient */
+  color: #666 !important;
+  /* Darker grey text */
+  cursor: not-allowed !important;
+  /* Show 'not-allowed' cursor */
+  box-shadow: none !important;
+  /* Remove any box shadow */
+  opacity: 0.6;
+  /* Make it slightly transparent */
 }
 
 .disabled-button:hover {
-    transform: none !important; /* Prevent hover transform effect */
-    filter: none !important;    /* Prevent hover filter effect */
+  transform: none !important;
+  /* Prevent hover transform effect */
+  filter: none !important;
+  /* Prevent hover filter effect */
 }
 
 .disabled-button::before {
-    display: none !important; /* Hide the hover shine effect */
+  display: none !important;
+  /* Hide the hover shine effect */
 }
 
 /* Dakujeme Section - Video */
 .video-responsive-container {
-    /* Using the modern `aspect-ratio` property is a cleaner way to handle this. */
-    /* It correctly calculates height based on the *actual* width of the element, even with max-width. */
-    aspect-ratio: 16 / 9;
-    max-width: 900px; /* Max width for the video container */
-    margin: 2rem auto 0 auto; /* Centered with top margin */
-    border-radius: 16px; /* Rounded corners */
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2); /* Nice shadow */
-    overflow: hidden; /* This is important to make the iframe corners respect the border-radius. */
+  /* Using the modern `aspect-ratio` property is a cleaner way to handle this. */
+  /* It correctly calculates height based on the *actual* width of the element, even with max-width. */
+  aspect-ratio: 16 / 9;
+  max-width: 900px;
+  /* Max width for the video container */
+  margin: 2rem auto 0 auto;
+  /* Centered with top margin */
+  border-radius: 16px;
+  /* Rounded corners */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  /* Nice shadow */
+  overflow: hidden;
+  /* This is important to make the iframe corners respect the border-radius. */
 }
 
 .video-responsive-container iframe {
-    /* The iframe can now be a simple block element that fills its container. */
-    width: 100%;
-    height: 100%;
-    border: 0;
+  /* The iframe can now be a simple block element that fills its container. */
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
