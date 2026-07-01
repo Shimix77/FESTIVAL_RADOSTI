@@ -1820,58 +1820,213 @@ html {
     /* Ensure links/copyright are in the middle */
   }
 }
-
-/* Small Photo Gallery Styling */
-.gallery-wrapper {
-  max-width: 900px;
-  /* Adjust as needed */
-  margin: 3rem auto 0 auto;
-  /* Centered with top margin, adjust as needed */
-  padding: 0 1rem;
-  /* Consistent horizontal padding */
-}
-
-.gallery-title {
-  text-align: center;
-  font-size: 1.5rem;
-  /* Adjust as needed */
-  color: var(--text-primary);
-  margin-bottom: 2rem;
-  font-weight: 600;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  /* Responsive grid */
-  gap: 1rem;
-  /* Space between images */
-}
-
-.gallery-item {
+/* Photo Gallery Slider Styling */
+.gallery-slider {
   width: 100%;
-  border-radius: 12px;
-  /* Optional: match card styling */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  /* Optional: subtle shadow */
+  position: relative;
   overflow: hidden;
-  /* Ensures image respects border-radius */
+  margin-top: 2rem;
 }
 
-.gallery-item img {
-  width: 100%;
-  height: 200px;
-  /* Fixed height for consistency, adjust as needed */
-  object-fit: cover;
-  /* Crop images to fit, maintaining aspect ratio */
-  display: block;
-  /* Remove extra space below image */
+.gallery-track {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  gap: 1.5rem;
+  padding: 1.5rem 0.5rem;
+  /* Hide scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.gallery-track::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.gallery-card {
+  flex: 0 0 75%; /* mobile shows middle card + parts of next/prev */
+  scroll-snap-align: center;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  background: var(--dark-card);
   transition: transform 0.3s ease;
 }
 
-.gallery-item img:hover {
-  transform: scale(1.05);
-  /* Slight zoom on hover */
+@media (min-width: 768px) {
+  .gallery-card {
+    flex: 0 0 30%; /* tablet screen shows ~3 items */
+  }
+}
+
+@media (min-width: 1200px) {
+  .gallery-card {
+    flex: 0 0 22%; /* desktop screen shows ~4.5 items */
+  }
+}
+
+.gallery-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 78, 80, 0.7); /* Primary gradient color with opacity */
+  background: linear-gradient(135deg, rgba(255, 78, 80, 0.8) 0%, rgba(249, 212, 35, 0.8) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.gallery-zoom-icon {
+  color: white;
+  transform: scale(0.5);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.gallery-card:hover .gallery-image {
+  transform: scale(1.1);
+}
+
+.gallery-card:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-card:hover .gallery-zoom-icon {
+  transform: scale(1);
+}
+
+.gallery-card:focus-visible {
+  outline: 3px solid var(--text-primary);
+  outline-offset: 4px;
+}
+
+/* Lightbox Styling */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#lightboxImage {
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: 8px;
+  object-fit: contain;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  user-select: none;
+  /* Smooth transition when changing images */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Lightbox Controls */
+.lightbox-close, .lightbox-prev, .lightbox-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  z-index: 10001;
+}
+
+.lightbox-close:hover, .lightbox-prev:hover, .lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.1);
+}
+
+.lightbox-close {
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.lightbox-prev, .lightbox-next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4rem;
+  height: 4rem;
+  font-size: 1.5rem;
+}
+
+.lightbox-prev:hover, .lightbox-next:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-prev {
+  left: 1.5rem;
+}
+
+.lightbox-next {
+  right: 1.5rem;
+}
+
+/* Hide controls nicely on smaller screens or adjust sizes */
+@media (max-width: 768px) {
+  .lightbox-prev, .lightbox-next {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.2rem;
+  }
+  .lightbox-close {
+    top: 1rem;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.8rem;
+  }
+  .lightbox-prev { left: 0.5rem; }
+  .lightbox-next { right: 0.5rem; }
 }
 
 /* Styles for disabled button */

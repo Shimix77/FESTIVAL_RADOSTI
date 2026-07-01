@@ -392,3 +392,197 @@ window.addEventListener('load', () => {
           }
       }
   });
+
+  // --- Gallery Lightbox Logic ---
+  const galleryLightbox = document.getElementById('galleryLightbox');
+  const lightboxImg = document.getElementById('lightboxImage');
+  const galleryCards = document.querySelectorAll('.gallery-card');
+  const closeBtn = document.querySelector('.lightbox-close');
+  const prevBtn = document.querySelector('.lightbox-prev');
+  const nextBtn = document.querySelector('.lightbox-next');
+
+  let currentGalleryIndex = 0;
+  const imageSources = Array.from(galleryCards).map(card => card.querySelector('.gallery-image').src);
+
+  function openLightbox(index) {
+      currentGalleryIndex = index;
+      lightboxImg.src = imageSources[currentGalleryIndex];
+      galleryLightbox.classList.add('active');
+      galleryLightbox.setAttribute('aria-hidden', 'false');
+      // Focus on the lightbox for accessibility (could focus close button or image container)
+      if(closeBtn) closeBtn.focus();
+      // Prevent body scrolling
+      document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+      galleryLightbox.classList.remove('active');
+      galleryLightbox.setAttribute('aria-hidden', 'true');
+      // Restore body scrolling
+      document.body.style.overflow = '';
+      // Focus back to the gallery card that was clicked
+      if(galleryCards[currentGalleryIndex]) {
+          galleryCards[currentGalleryIndex].focus();
+      }
+  }
+
+  function changeLightboxImage(direction) {
+      // Add slight fade out effect before changing source
+      lightboxImg.style.opacity = 0.5;
+      lightboxImg.style.transform = 'scale(0.98)';
+      
+      setTimeout(() => {
+          currentGalleryIndex += direction;
+          
+          if (currentGalleryIndex < 0) {
+              currentGalleryIndex = imageSources.length - 1;
+          } else if (currentGalleryIndex >= imageSources.length) {
+              currentGalleryIndex = 0;
+          }
+          
+          lightboxImg.src = imageSources[currentGalleryIndex];
+          
+          // Restore opacity and scale
+          lightboxImg.style.opacity = 1;
+          lightboxImg.style.transform = 'scale(1)';
+      }, 150);
+  }
+
+  // Attach click events to gallery cards
+  galleryCards.forEach((card, index) => {
+      card.addEventListener('click', () => openLightbox(index));
+      // Keyboard support for opening (Enter/Space)
+      card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              openLightbox(index);
+          }
+      });
+  });
+
+  // Attach click events to lightbox controls
+  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+  if (prevBtn) prevBtn.addEventListener('click', () => changeLightboxImage(-1));
+  if (nextBtn) nextBtn.addEventListener('click', () => changeLightboxImage(1));
+  
+  // Close lightbox when clicking outside the image
+  if(galleryLightbox) {
+      galleryLightbox.addEventListener('click', (e) => {
+          if (e.target === galleryLightbox || e.target.classList.contains('lightbox-content')) {
+              closeLightbox();
+          }
+      });
+  }
+
+  // Keyboard navigation for Lightbox
+  document.addEventListener('keydown', function(e) {
+      if (!galleryLightbox || !galleryLightbox.classList.contains('active')) return;
+      
+      if (e.key === 'Escape') {
+          closeLightbox();
+      } else if (e.key === 'ArrowLeft') {
+          changeLightboxImage(-1);
+      } else if (e.key === 'ArrowRight') {
+          changeLightboxImage(1);
+      }
+  });
+
+  // Touch Swipe support for Lightbox
+  let touchStartX = 0;
+  let touchEndX = 0;
+  
+  if(galleryLightbox) {
+      galleryLightbox.addEventListener('touchstart', e => {
+          touchStartX = e.changedTouches[0].screenX;
+      }, {passive: true});
+
+      galleryLightbox.addEventListener('touchend', e => {
+          touchEndX = e.changedTouches[0].screenX;
+          handleSwipe();
+      }, {passive: true});
+  }
+
+  function handleSwipe() {
+      const swipeThreshold = 50; // Minimum distance for a swipe
+      if (touchEndX < touchStartX - swipeThreshold) {
+          // Swipe Left -> Next Image
+          changeLightboxImage(1);
+      }
+      if (touchEndX > touchStartX + swipeThreshold) {
+          // Swipe Right -> Prev Image
+          changeLightboxImage(-1);
+      }
+  }
+
+  // --- Gallery Autoscrolling Slider Logic ---
+  const galleryTrack = document.querySelector('.gallery-track');
+  let autoscrollInterval = null;
+  let isPaused = false;
+  const autoscrollDelay = 3000; // Time between scrolls (3 seconds)
+
+  function startAutoscroll() {
+      if (autoscrollInterval) return;
+
+      autoscrollInterval = setInterval(() => {
+          if (isPaused || !galleryTrack) return;
+
+          const cards = galleryTrack.querySelectorAll('.gallery-card');
+          if (cards.length === 0) return;
+
+          const cardWidth = cards[0].offsetWidth;
+          // Compute gap style value if available, default to 24px (1.5rem)
+          const computedStyle = window.getComputedStyle(galleryTrack);
+          const gap = parseFloat(computedStyle.gap) || 24;
+          const scrollStep = cardWidth + gap;
+
+          // Check if we are at the end of the scrollable area (with 5px threshold for rounding errors)
+          const isAtEnd = galleryTrack.scrollLeft + galleryTrack.clientWidth >= galleryTrack.scrollWidth - 10;
+
+          if (isAtEnd) {
+              // Wrap back to beginning
+              galleryTrack.scrollTo({
+                  left: 0,
+                  behavior: 'smooth'
+              });
+          } else {
+              // Scroll to the next image
+              galleryTrack.scrollBy({
+                  left: scrollStep,
+                  behavior: 'smooth'
+              });
+          }
+      }, autoscrollDelay);
+  }
+
+  function stopAutoscroll() {
+      if (autoscrollInterval) {
+          clearInterval(autoscrollInterval);
+          autoscrollInterval = null;
+      }
+  }
+
+  // Event Listeners for pausing and resuming autoscroll
+  if (galleryTrack) {
+      // Mouse Hover Pause
+      galleryTrack.addEventListener('mouseenter', () => {
+          isPaused = true;
+      });
+      galleryTrack.addEventListener('mouseleave', () => {
+          isPaused = false;
+      });
+
+      // Touch Pause (mobile/tablet manual swiping override)
+      galleryTrack.addEventListener('touchstart', () => {
+          isPaused = true;
+      }, { passive: true });
+      galleryTrack.addEventListener('touchend', () => {
+          // Keep it paused briefly to allow user interaction
+          setTimeout(() => {
+              isPaused = false;
+          }, 1500);
+      }, { passive: true });
+  }
+
+  // Start initially
+  startAutoscroll();
+
