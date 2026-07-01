@@ -23,6 +23,60 @@
   --text-primary: var(--light-theme-text-primary);
   --text-secondary: var(--light-theme-text-secondary);
   --border-color: var(--light-theme-border-color);
+
+  /* === Extended brand gradients === */
+  --tertiary-gradient: linear-gradient(135deg, #b91372 0%, #ff4e50 100%);
+  /* magenta to coral - "deep devotion" */
+  --hero-gradient: linear-gradient(135deg, #7a1f1f 0%, #ff8008 100%);
+  /* deep ember to orange - "solemn intensity" */
+  --surface-gradient: linear-gradient(135deg, #fff8f0 0%, #ffefdc 100%);
+  /* soft cream to sand - subtle section bg */
+
+  /* === Cool counterpoint (sparingly: links, focus, info) === */
+  --cool-accent-gradient: linear-gradient(135deg, #4facfe 0%, #00c9b1 100%);
+  /* sky to teal - "calm clarity" */
+  --cool-accent-solid: #2f7bc4;
+
+  /* === Semantic state colors (flat, not gradients — for clarity) === */
+  --color-success: #4caf50;
+  --color-success-bg: #e8f5e9;
+  --color-warning: #ff9800;
+  /* distinct from brand orange by staying flat/solid */
+  --color-warning-bg: #fff3e0;
+  --color-error: #d32f2f;
+  --color-error-bg: #fdecea;
+  --color-info: #2f7bc4;
+  --color-info-bg: #e8f2fb;
+
+  /* === Neutral scale (extends your existing grays) === */
+  --gray-50: #f8f9fa;
+  --gray-100: #f1f3f5;
+  --gray-200: #dee2e6;
+  --gray-300: #ced4da;
+  --gray-400: #adb5bd;
+  --gray-500: #6c757d;
+  --gray-600: #495057;
+  --gray-700: #343a40;
+  --gray-800: #212529;
+  --gray-900: #14171a;
+
+  /* === Dark theme palette === */
+  --dark-theme-bg: #1a1310;
+  /* warm near-black, not pure gray */
+  --dark-theme-card: #241a15;
+  --dark-theme-text-primary: #f8f9fa;
+  --dark-theme-text-secondary: #b8b0a8;
+  --dark-theme-border-color: #3a2b22;
+  --dark-theme-navbar-bg: rgba(26, 19, 16, 0.95);
+  --dark-theme-navbar-scrolled-bg: rgba(26, 19, 16, 0.85);
+
+  /* === Text-on-gradient (for buttons/headers using your gradients) === */
+  --text-on-gradient: #fffaf5;
+  --text-on-gradient-muted: rgba(255, 250, 245, 0.75);
+
+  /* === Tinted shadows (matches brand instead of generic black) === */
+  --shadow-warm-sm: 0 2px 8px rgba(255, 78, 80, 0.12);
+  --shadow-warm-md: 0 8px 24px rgba(255, 128, 8, 0.18);
 }
 
 * {
@@ -485,7 +539,7 @@ body {
 
 /* Téma Section */
 .tema {
-  background: var(--dark-card);
+  background: var(--tertiary-gradient);
   border-radius: 24px;
   padding: 6rem 4rem;
   margin: 4rem 2rem;
@@ -500,7 +554,6 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--secondary-gradient);
   opacity: 0.1;
   border-radius: 24px;
 }
@@ -517,10 +570,13 @@ body {
   /* This will be a flex container on desktop */
 }
 
+.tema-text-color {
+  color: var(--dark-theme-text-primary);
+}
+
 .tema-text {
   font-size: 1.3rem;
   line-height: 1.8;
-  color: var(--text-secondary);
   text-align: justify;
   /* Align text to both sides for better formatting */
   margin-bottom: 2rem;
