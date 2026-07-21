@@ -36,6 +36,8 @@
   --cool-accent-gradient: linear-gradient(135deg, #4facfe 0%, #00c9b1 100%);
   /* sky to teal - "calm clarity" */
   --cool-accent-solid: #2f7bc4;
+  /* ocean*/
+  --ocean: linear-gradient(135deg, #667eea 0%, #06b6d4 100%);
 
   /* === Semantic state colors (flat, not gradients — for clarity) === */
   --color-success: #4caf50;
@@ -631,64 +633,103 @@ body {
 }
 
 /* Hostia Section */
-.hostia-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+.hostia-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
   margin-top: 4rem;
 }
 
-.host-card {
-  background: var(--dark-card);
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
-  /* padding: 3rem 2rem; Removed padding, will be on host-content */
-  text-align: left;
-  /* Align text left now that avatar is full width */
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.hostia-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.main-speaker-row .host-card,
+.special-speaker-row .host-card {
+  max-width: 800px;
+  width: 100%;
+}
+
+.speakers-slider {
+  width: 100%;
   position: relative;
   overflow: hidden;
-  /* Important for the image border-radius */
 }
 
-.host-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+.speakers-track {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  gap: 2.5rem;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  overflow-y: hidden;
+  padding: 1rem 0.5rem;
+  width: 100%;
+}
+
+.speakers-track::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
+
+.speakers-track .host-card {
+  flex: 0 0 calc(33.333% - 1.67rem);
+  min-width: 420px;
+  scroll-snap-align: start;
+}
+
+.speakers-dots {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.speaker-dot {
+  width: 4rem;
+  height: 1rem;
+  border-radius: 10px;
+  background: var(--border-color);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.6;
+}
+
+.speaker-dot.active {
   background: var(--primary-gradient);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: 1;
-  /* Ensure it's below content */
+  transform: scale(1.2);
+  opacity: 1;
 }
 
-.host-card:hover::before {
-  opacity: 0.05;
+@media (min-width: 1300px) {
+  .speakers-dots {
+    display: none;
+  }
 }
 
-.host-card:hover {
-  transform: translateY(-8px);
-  /* Adjusted border color to use accent gradient's first color for hover */
-  border-color: rgba(255, 170, 76, 0.5);
-  /* Example: using --accent-gradient's start color */
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+.host-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
+  text-align: left;
 }
 
 .host-avatar {
-  width: 100%;
-  height: 250px;
+  width: min(250px, 45%);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
   overflow: hidden;
-  /* margin: 0 0 2rem 0; Removed margin, image is flush with top */
-  position: relative;
-  z-index: 2;
-  /* Above the ::before pseudo-element */
-  border-top-left-radius: 20px;
-  /* Matches card */
-  border-top-right-radius: 20px;
-  /* Matches card */
+  border-radius: 16px;
 }
 
 .host-avatar img {
@@ -700,31 +741,28 @@ body {
 }
 
 .host-content {
-  padding: 2rem;
-  /* Add padding to the content area below image */
-  position: relative;
-  /* Ensure content is above ::before pseudo-element */
-  z-index: 2;
+  flex-grow: 1;
 }
 
 .host-name {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
   color: var(--text-primary);
-  /* Ensure it's primary text color */
 }
 
 .host-role {
   color: var(--text-secondary);
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  margin-bottom: 0.85rem;
   font-weight: 500;
 }
 
 .host-description {
   color: var(--text-secondary);
-  line-height: 1.6;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: justify;
+  padding: 0 0.5rem;
 }
 
 /* Lístky (Tickets) Section */
@@ -1003,7 +1041,7 @@ body {
 
 .timeline-item {
   position: relative;
-  padding: 1rem 0 1rem 5rem;
+  padding: 0 0 0.5rem 5rem;
   /* Reduced top/bottom padding */
   border-left: 2px solid transparent;
   opacity: 0;
@@ -1021,7 +1059,7 @@ body {
   position: absolute;
   left: calc(2rem - 6px + 1px);
   /* (timeline::before left) - (dot width / 2) + (timeline::before width / 2) */
-  top: 1.5rem;
+  top: 0.5rem;
   /* Adjusted to match reduced padding */
   width: 12px;
   height: 12px;
@@ -1037,7 +1075,6 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 0.25rem;
   /* Reduced margin */
 }
 
@@ -1379,19 +1416,31 @@ body {
     font-size: 2rem;
   }
 
-  .hostia-grid {
-    grid-template-columns: 1fr;
+  .speakers-track {
     gap: 1.5rem;
   }
 
-  .host-avatar {
-    height: 200px;
-    /* Slightly smaller image height on mobile */
+  .speakers-track .host-card {
+    flex: 0 0 280px;
+    min-width: 0;
+    scroll-snap-align: center;
   }
 
-  .host-content {
-    padding: 1.5rem;
-    /* Adjust padding for mobile */
+  .hostia-container {
+    gap: 2.5rem;
+  }
+
+  .host-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    gap: 0.5rem;
+  }
+
+  .host-avatar {
+    width: 250px;
+    height: 250px;
   }
 
   .hero-buttons {
